@@ -6,13 +6,14 @@ import params from '../config/Landing.config';
 class Landing extends React.Component {
 	render() {
 		return(
-			<Particles
-  		  params={params}
-			/>
+			<div className='Landing'>
+				<Particles
+					params={params}
+				/>
+			</div>
+		
 		);
 	}	
 }
-
-
 
 export default Landing;

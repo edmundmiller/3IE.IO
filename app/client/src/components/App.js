@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+<<<<<<< HEAD
+// import NavBar from './NavBar'      TODO: complete firebase implemenation
+import Landing from '../pages/Landing';
+=======
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Landing from '../pages/Landing';
+import Profile from '../pages/Profile';
+>>>>>>> 30a5e79ce6aaa7f94d25bcaf53a660912f6bae56
 import '../css/App.css';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+<<<<<<< HEAD
+        <Landing />
+=======
+      <Router>
+        <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/profile" component={Profile} />
+        </Switch>
+      </Router>
+>>>>>>> 30a5e79ce6aaa7f94d25bcaf53a660912f6bae56
       </div>
     );
   }

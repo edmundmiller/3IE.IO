@@ -12,6 +12,8 @@ contract Hackathoncontract {
     mapping (address => uint) public user_rep_map;
     mapping (address => mapping(bytes32 => bool)) has_used;
 
+    mapping (address => uint) public escrowed_bounties;
+
     constructor() public {
         owner = msg.sender;
     }
@@ -50,4 +52,11 @@ contract Hackathoncontract {
     }
     */
 
+    function release_escrowed(address _recipient, uint _amt) public returns (bool success) {
+        assert(msg.sender == owner);
+        assert(escrowed_bounties[_recipient] >= _amt);
+        escrowed_bounties[_recipient] = safe_subtract(escrowed_bounties[_recipient], _amt);
+        _recipient.transfer(_amt);
+        return true;
+    }
 }

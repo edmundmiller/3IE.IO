@@ -1,21 +1,14 @@
-import React, {Component} from 'react'
+import React from 'react';
+import ProjectDashboard from '../components/Project/ProjectDashboard';
 
-class Project extends Component {
-  constructor (props) {
-    super(props)
-    this.state ={
-      projectTitle: '',
-      projectDescription: ''
-    }
-  }
-
-  render() {
-    return(
-      <div>
-        <h1>Hello, this is a project page</h1>
-      </div>
-    )
-  }
+class Project extends React.Component {
+	render() {
+		return(
+			<div> 
+                <ProjectDashboard />
+            </div>
+		);
+	}	
 }
 
-export default Project
+export default Project;

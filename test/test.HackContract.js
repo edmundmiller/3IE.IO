@@ -37,7 +37,7 @@ contract('3IE.IO Contract', function (accounts) {
         let out_balance = await contract.bounty_map.call(bountyHash);
         let balance = out_balance.toNumber();
         let out_payout = await contract.payout_map.call(bountyHash);
-        let payout = out_payout.toNumber();
+        let payout = out_payout.toNumber()
         let out_minimumRep = await contract.minimum_rep_map.call(bountyHash);
         let minimuimRep = out_minimumRep.toNumber();
 

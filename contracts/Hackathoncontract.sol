@@ -44,13 +44,11 @@ contract Hackathoncontract {
         return true;
     }
 
-/*
-    function claim_bounty_delayed(bytes32 _hash) public returns (bool success) {
+    function claim_bounty_dev(bytes32 _hash) public returns (bool success) {
         bounty_map[_hash] = safe_subtract(bounty_map[_hash], payout_map[_hash]);
         msg.sender.transfer(payout_map[_hash]);
         return true;
     }
-    */
 
     function release_escrowed(address _recipient, uint _amt) public returns (bool success) {
         assert(msg.sender == owner);

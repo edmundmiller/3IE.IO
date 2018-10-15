@@ -39,16 +39,11 @@ contract Hackathoncontract {
     }
 
     function claim_bounty_immediate(bytes32 _hash) public returns (bool success) {
-        assert(user_rep_map[msg.sender] >= minimum_rep_map[_hash]);
-        assert(has_used[msg.sender][_hash] == false);
-        has_used[msg.sender][_hash] == true;
-        bounty_map[_hash] = safe_subtract(bounty_map[_hash], payout_map[_hash]);
-        msg.sender.transfer(payout_map[_hash]);
-        return true;
-    }
-
-    function claim_bounty_dev(bytes32 _hash) public returns (bool success) {
-        assert(DEV_MODE);
+        if(!DEV_MODE){
+            assert(user_rep_map[msg.sender] >= minimum_rep_map[_hash]);
+            assert(has_used[msg.sender][_hash] == false);
+            has_used[msg.sender][_hash] == true;
+        }
         bounty_map[_hash] = safe_subtract(bounty_map[_hash], payout_map[_hash]);
         msg.sender.transfer(payout_map[_hash]);
         return true;

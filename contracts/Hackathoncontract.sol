@@ -3,13 +3,18 @@ pragma solidity ^0.4.19;
 contract Hackathoncontract {
 
 // store balances of bounty suppliers/providers
-    address public owner;
+    address public owner; //The 3IE.IO account
+
     mapping (bytes32 => uint) public bounty_map;
     mapping (bytes32 => uint) public payout_map;
     mapping (bytes32 => uint) public minimum_rep_map;
 
     mapping (address => uint) public user_rep_map;
     mapping (address => mapping(bytes32 => bool)) has_used;
+
+    constructor() public {
+        owner = msg.sender;
+    }
 
     function safe_add(uint x, uint y) internal pure returns (uint z) {
         assert((x + y) > x);

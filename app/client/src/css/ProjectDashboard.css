@@ -1,0 +1,77 @@
+.project-wrapper {
+    display: flex; /* or inline-flex */
+    align-items: flex-start;
+}
+
+.project-card {
+    margin: 10px;
+    width: 10%;
+    background-color: red;
+}
+
+.project-logo {
+    width: 60px;
+    height: 60px;
+}
+
+.title {
+    color: black;
+    font-size: 16;
+}
+
+.project-label {
+    margin: 20px;
+    width: 60%;
+}
+
+.project-team-wrapper {
+    width: 20%;
+}
+
+.team-member-profile-image {
+    width: 30px;
+    height: 30px;
+}
+
+.team-member-card {
+    margin: 10px;
+    width: 100%;
+}
+
+.social-media-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.social-media-card {
+    margin: 10px;
+    width: 20%;
+}
+
+.updates-share-wrapper {
+    display: flex; /* or inline-flex */
+    align-items: flex-start;
+}
+
+.updates-wrapper {
+    margin: 10px;
+    width: 70%;
+    display: flex; /* or inline-flex */
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.updates-card {
+    padding: 20px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.share-wrapper {
+    margin-left: 5%;
+    width: 20%;
+}
+
+.share-social-media-card {
+
+}

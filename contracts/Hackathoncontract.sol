@@ -30,7 +30,7 @@ contract Hackathoncontract {
 
     function create_bounty(bytes32 _hash, uint _payout, uint min_rep) public payable returns (bool success) {
         bounty_map[_hash] = safe_add(bounty_map[_hash], msg.value);
-        payout_map[_hash] = _payout;
+        payout_map[_hash] = safe_add(0, _payout);
         minimum_rep_map[_hash] = min_rep;
         return true;
     }

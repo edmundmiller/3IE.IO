@@ -1,4 +1,9 @@
 .Landing {
 	text-align: center;
 	background-color: #040020;
+	background-image: url("../resources/3ie.io.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 20%;
+	opacity: 0%;
 }

@@ -26,7 +26,7 @@ contract('3IE.IO Contract', function (accounts) {
     it('create bounty', async () => {
         let bountyHash = hash.sha256().update('bountycode').digest('hex');
         let bountyContribution = 10000;
-        let bountyPayout = 100;
+        let bountyPayout = 200;
         let bountyMinimuimRep = 10;
         //create_bounty(bytes32 hash, uint payout, uint minimuim_rep) payable
         let creationSuccess = await contract.create_bounty(

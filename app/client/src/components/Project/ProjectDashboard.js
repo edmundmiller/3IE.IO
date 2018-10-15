@@ -1,28 +1,36 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import ExampleProjectLogo from '../images/ncUG3A1O_400x400.jpg';
+import ExampleProjectLogo from '../../images/ncUG3A1O_400x400.jpg';
 import Card from '@material-ui/core/Card';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import styles from '../css/ProjectDashboard.css';
+import SelectionDrawer from './SelectionDrawer';
+import styles from '../../css/ProjectDashboard.css';
+
+function TabContainer({ children}) {
+    return (
+      <Typography component="div" dir="left" style={{ padding: 8 * 3 }}>
+        {children}
+      </Typography>
+    );
+  }
 
 class ProjectDashboard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabSelection: '',
+            tabSelection: 0,
         };
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    componentDidMount() {
-
-    }
+    handleChange = (event, value) => {
+        this.setState({ tabSelection: value  });
+    };
 
     
   render() {
-
-      console.log(styles.projectInfo);
     return (    
       <div> 
         <div className="project-wrapper">
@@ -138,27 +146,11 @@ class ProjectDashboard extends React.Component {
             </div>
         </div>
 
-
-        <Paper square>
-            <Tabs
-            value={this.state.tabSelection}
-            indicatorColor="primary"
-            textColor="primary"
-            >
-            <Tab label="Comments" />
-            <Tab label="Contact" />
-            <Tab label="More Info" />
-            </Tabs>
-      </Paper>
-
+      <SelectionDrawer />
+      
       </div>
     );
   }
 }
-
-
-
-
-
 
 export default (ProjectDashboard);

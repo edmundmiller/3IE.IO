@@ -5,7 +5,9 @@ import Card from '@material-ui/core/Card';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import ProjectHeader from './ProjectHeader';
 import SelectionDrawer from './SelectionDrawer';
+import MessagingCard from './MessagingCard';
 import styles from '../../css/ProjectDashboard.css';
 
 function TabContainer({ children}) {
@@ -33,77 +35,9 @@ class ProjectDashboard extends React.Component {
   render() {
     return (    
       <div> 
-        <div className="project-wrapper">
-                <div className="project-card">
-                    <Card>
-                        <img src={ExampleProjectLogo} className="project-logo" />
-                        <Typography className={styles.title} color="textSecondary" gutterBottom>
-                            Project Name
-                        </Typography>
-                    </Card>
-                </div>
+        <ProjectHeader />
 
-                <div className="project-label">
-                    <Typography className="title" color="textSecondary" gutterBottom>
-                        Project Title
-                    </Typography>
-
-                    <div> 
-                        This is the Discription
-                    </div>
-                </div>  
-
-                <div className="project-team-wrapper"> 
-                    <div>
-                        Meet The Team:
-                    </div>
-
-                    <Card className="team-member-card">
-                        <img src={ExampleProjectLogo} className="team-member-profile-image" />
-                        <div>
-                            Name
-                        </div>
-
-                        <Typography className={styles.title} color="textSecondary" gutterBottom>
-                            Role
-                        </Typography>
-                    </Card>
-
-                    <Card className="team-member-card">
-                        <img src={ExampleProjectLogo} className="team-member-profile-image" />
-                        <div>
-                            Name
-                        </div>
-
-                        <Typography className={styles.title} color="textSecondary" gutterBottom>
-                            Role
-                        </Typography>
-                    </Card>
-                </div>
-        </div>
-
-        <div className="social-media-wrapper">
-            <Card className="social-media-card">
-                        <img src={ExampleProjectLogo} className="team-member-profile-image" />
-                        <div>
-                            Telegraph
-                        </div>
-            </Card>
-
-            <Card className="social-media-card">
-                        <img src={ExampleProjectLogo} className="team-member-profile-image" />
-                        <div>
-                            Slack
-                        </div>
-            </Card>
-
-            <Card className="social-media-card">
-                        <img src={ExampleProjectLogo} className="team-member-profile-image" />
-                        <div>
-                            Discord
-                        </div>
-            </Card>
-        </div>
+        <MessagingCard />
 
         <div className="updates-share-wrapper">
             <div className="updates-wrapper"> 

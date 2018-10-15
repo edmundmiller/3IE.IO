@@ -1,0 +1,30 @@
+.navBar {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  margin-top: 2vh;
+  display: inline-block;
+}
+.logo {
+  width: 80px;
+  float: left;
+}
+ul {
+  list-style: none;
+  color: white;
+}
+
+ul li {
+  display: inline;
+  margin-right: 2.5vw;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+}
+
+.auth-base {
+  float: right;
+  margin-right: 4vw;
+}

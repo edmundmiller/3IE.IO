@@ -1,53 +1,63 @@
-import React, {Component} from 'react';
-import logo from '../resources/logo.svg';
+import React, { Component } from "react";
+import logo from "../resources/3ie.io.svg";
 
+import "../css/Navbar.css";
 // Firebase Authentification
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { firebase, auth } from '../firebase';
 
 // React Routing
-import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
-
-var Recaptcha = require('react-recaptcha');
+import { Link } from "react-router-dom";
 
 class NavBar extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
 
-  render () {
+  render() {
     return (
-      <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/projects">Projects</Link>
-        </li>
-        <li>
-          <Link to="membership">Membership</Link>
-        </li>
-        <li>
-          <Link to="news">Content & News</Link>
-        </li>
-        <li>
-          <Link to="signup">Signup</Link>
-        </li>
-        <li>
-          <Link to="login">Login</Link>
-        </li>
-      </ul>
+      <div className="navBar">
+        <ul clasName="nav-bar">
+          <li>
+            <Link className="nav-item" to="/">
+              <img className="logo" src={logo} alt="logo" />
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-item" to="/about">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-item" to="/projects">
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-item" to="membership">
+              Membership
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-item" to="news">
+              Content & News
+            </Link>
+          </li>
+          <div className="auth-base">
+            <li>
+              <Link className="nav-item" to="signup">
+                Signup
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-item" to="login">
+                Login
+              </Link>
+            </li>
+          </div>
+        </ul>
       </div>
     );
   }
 }
 
-export default (NavBar);
+export default NavBar;

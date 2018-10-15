@@ -9,7 +9,9 @@ class Landing extends React.Component {
 			<div className='Landing'>
 				<Particles
 					params={params}
-				/>
+				>
+        </Particles>
+        <h1>Hello</h1>
 			</div>
 		
 		);

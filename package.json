@@ -7,9 +7,15 @@
   "main": "app/main.js",
   "scripts": {},
   "dependencies": {
+<<<<<<< HEAD
     "hash": "^0.2.1",
     "minimalistic-assert": "^1.0.1",
     "chai": "^4.2.0",
+=======
+    "chai": "^4.2.0",
+    "hash.js": "^1.1.5",
+    "minimalistic-assert": "^1.0.1",
+>>>>>>> 7ecdba6659d64eda465a33d7f7f80c780abe1a71
     "mocha": "^5.2.0"
   },
   "devDependencies": {}

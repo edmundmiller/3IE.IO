@@ -1,5 +1,6 @@
 import React from 'react';
 import ExampleProjectLogo from '../../images/ncUG3A1O_400x400.jpg';
+import Ourlogo from '../../resources/3ie.io.svg';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import TeamContainer from './TeamContainer';
@@ -9,17 +10,17 @@ const ProjectHeader = ({ }) => {
     return (
         <div className="project-wrapper">
                 <div className="project-card">
-                    <Card>
-                        <img src={ExampleProjectLogo} className="project-logo" />
-                        <Typography className={styles.title} color="textSecondary" gutterBottom>
+                    <img src={Ourlogo} className="project-logo" />
+                    <div className="project-header-title"> 
+                        
                             Project Name
-                        </Typography>
-                    </Card>
+                        
+                    </div>
                 </div>
 
                 <div className="project-label">
                     <Typography className="title" color="textSecondary" gutterBottom>
-                        Project Title
+                       Project Title
                     </Typography>
 
                     <div> 

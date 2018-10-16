@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import ProjectHeader from './ProjectHeader';
+import Actions from './Actions';
 import SelectionDrawer from './SelectionDrawer';
 import MessagingCard from './MessagingCard';
 import styles from '../../css/ProjectDashboard.css';
@@ -34,10 +35,12 @@ class ProjectDashboard extends React.Component {
     
   render() {
     return (    
-      <div> 
+      <div className="project-outer-wrapper"> 
         <ProjectHeader />
 
         <MessagingCard />
+
+        <Actions />
 
         <div className="updates-share-wrapper">
             <div className="updates-wrapper"> 

@@ -2,6 +2,8 @@ html, body {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+  /* background-color: rgb(250, 250, 250); */
+  background-color: rgb(14, 14, 14);
 }
 
 html { height: 100%; overflow:auto; }

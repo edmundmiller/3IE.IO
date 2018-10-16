@@ -5,28 +5,28 @@ import Card from '@material-ui/core/Card';
 import TeamContainer from './TeamContainer';
 import styles from '../../css/ProjectDashboard.css';
 
-const MessagingCard = ({ }) => {
+const Actions = ({ }) => {
     return (
         <div className="social-media-wrapper">
-            <Card className="social-media-card">    
+            <Card className="actions-card">                      
                         <div>
-                            Telegraph
+                            Audit
                         </div>
             </Card>
 
-            <Card className="social-media-card">
+            <Card className="actions-card">               
                         <div>
-                            Slack
+                            Github
                         </div>
             </Card>
 
-            <Card className="social-media-card">
+            <Card className="actions-card">
                         <div>
-                            Discord
+                            Mailing List
                         </div>
             </Card>
         </div>
     );
 }
 
-export default MessagingCard;
+export default Actions;

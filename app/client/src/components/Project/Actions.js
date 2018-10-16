@@ -8,23 +8,21 @@ import styles from '../../css/ProjectDashboard.css';
 const Actions = ({ }) => {
     return (
         <div className="social-media-wrapper">
-            <Card className="social-media-card">
-                       
+            <Card className="actions-card">                      
                         <div>
                             Audit
                         </div>
             </Card>
 
-            <Card className="social-media-card">
-                        
+            <Card className="actions-card">               
                         <div>
-                            Audit
+                            Github
                         </div>
             </Card>
 
-            <Card className="social-media-card">
+            <Card className="actions-card">
                         <div>
-                        Audit
+                            Mailing List
                         </div>
             </Card>
         </div>

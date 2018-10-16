@@ -35,7 +35,7 @@ class ProjectDashboard extends React.Component {
     
   render() {
     return (    
-      <div> 
+      <div className="project-outer-wrapper"> 
         <ProjectHeader />
 
         <MessagingCard />

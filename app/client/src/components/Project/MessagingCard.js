@@ -8,22 +8,19 @@ import styles from '../../css/ProjectDashboard.css';
 const MessagingCard = ({ }) => {
     return (
         <div className="social-media-wrapper">
-            <Card className="social-media-card">
-                        <img src={ExampleProjectLogo} className="team-member-profile-image" />
+            <Card className="social-media-card">    
                         <div>
                             Telegraph
                         </div>
             </Card>
 
             <Card className="social-media-card">
-                        <img src={ExampleProjectLogo} className="team-member-profile-image" />
                         <div>
                             Slack
                         </div>
             </Card>
 
             <Card className="social-media-card">
-                        <img src={ExampleProjectLogo} className="team-member-profile-image" />
                         <div>
                             Discord
                         </div>

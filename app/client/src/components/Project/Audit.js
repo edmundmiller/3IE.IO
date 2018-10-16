@@ -48,7 +48,7 @@ class Audit extends React.Component {
         />
         </div>
         <div className="audit-button"> 
-            <Button  onClick={this.handleClick} variant="contained" color="secondary">
+            <Button  onClick={this.handleClick} variant="contained" color="primary">
                 Submit
             </Button>
         </div>

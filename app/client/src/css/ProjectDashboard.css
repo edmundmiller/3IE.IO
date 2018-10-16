@@ -19,12 +19,15 @@
 }
 
 .project-logo {
+    margin-top: 5px;
     width: 60px;
     height: 60px;
 }
 
 .project-header-title {
+    margin-top: 15px;
     margin-left: 25px;
+    font-size: 20;
     line-height: 3;
     color: white;
 }
@@ -33,6 +36,10 @@
     margin: 20px;
     width: 35%;
     color: white;
+}
+
+.project-label-subtext {
+    color: grey;
 }
 
 .project-team-wrapper {
@@ -55,8 +62,8 @@
     margin: 10px;
     padding: 10px;
     width: 100%;
-    background-color: #4062bb;
-    background-image: linear-gradient(316deg, #4062bb 0%, #5200ae 74%);
+    background-color: #06bcfb;
+    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
     color: white;
 }
 
@@ -177,11 +184,10 @@
 }
 
 .share-social-media-card {
-    background-color: #06bcfb;
-    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
+    background-color: white;
     text-align: center;
     font-size: 30px;
-    color: blue;
+    color: #007bff;
 }
 
 .selection-drawer-wrapper {

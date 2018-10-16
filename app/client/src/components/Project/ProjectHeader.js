@@ -11,18 +11,24 @@ const ProjectHeader = ({ }) => {
         <div className="project-wrapper">
                 <div className="project-card">
                     <img src={Ourlogo} className="project-logo" />
-                    <div className="project-header-title" >    
-                        WebBlock
+                    <div className="project-header-title" >   
+                        <Typography variant="h5" component="h2" color="inherit"> 
+                            WebBlock
+                        </Typography>
                     </div>
                 </div>
 
                 <div className="project-label">
                     <Typography variant="h5" component="h2" color="inherit">
-                       Hedera Based Webhosting
+                       Hedera Webhosting
                     </Typography>
 
-                    <div> 
-                        Decentralized AWS
+                    <div className="project-label-subtext"> 
+                        A new platform to build a decentralized web hosting. Users will upload 
+                        compatatible code into the hedera file system, and the hosting 
+                        will be deployed to a user network. Micropayments will directly 
+                        pay users who donate computer power. 
+
                     </div>
                 </div>  
 

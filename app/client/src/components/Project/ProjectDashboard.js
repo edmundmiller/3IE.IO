@@ -44,7 +44,7 @@ class ProjectDashboard extends React.Component {
 
         <div className="updates-share-wrapper">
             <div className="updates-wrapper"> 
-                    Updates
+                        Updates
                 <Card className="updates-card">        
                     <Typography className={styles.title} color="textSecondary" gutterBottom>
                         Beta v0.5.8

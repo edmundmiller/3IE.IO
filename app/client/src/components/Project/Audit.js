@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import rewardAuditWithMicroPayment from '../../hedera/index';
+import HederaApi from '../../hedera';
 import Checkbox from '@material-ui/core/Checkbox';
 import styles from '../../css/ProjectDashboard.css';
 
@@ -22,7 +23,7 @@ class Audit extends React.Component {
 
     handleClick = (event) => {
         this.setState({ clicked: false });
-        console.log(rewardAuditWithMicroPayment('contractHex', 'accountID', 50));
+        console.log(HederaApi.rewardAuditWithMicroPayment('contractHex', 'accountID', 50));
     }
 
     handleChange = (event) => {
@@ -32,8 +33,8 @@ class Audit extends React.Component {
     
   render() {
     let AuditForm = (<div className="audit-card-selected-wrapper">
-        <a href="www.github.com/hederaProject">www.github.com/hederaProject </a>
-        <p>Have you audited the github?</p>
+        <a href="www.github.com/hederaProject" target="_blank">www.github.com/hederaProject </a>
+        <p>Have you audited the project?</p>
         <Checkbox /> <span style={{color: 'green'}}> Yes </span>
         <Checkbox /> <span style={{color: 'red'}}> No </span> 
         <div> 
@@ -48,7 +49,7 @@ class Audit extends React.Component {
         />
         </div>
         <div className="audit-button"> 
-            <Button  onClick={this.handleClick} variant="contained" color="secondary">
+            <Button  onClick={this.handleClick} variant="contained" color="primary">
                 Submit
             </Button>
         </div>

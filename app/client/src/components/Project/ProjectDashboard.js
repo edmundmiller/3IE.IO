@@ -44,32 +44,32 @@ class ProjectDashboard extends React.Component {
 
         <div className="updates-share-wrapper">
             <div className="updates-wrapper"> 
-                    Updates
+                        Updates
                 <Card className="updates-card">        
                     <Typography className={styles.title} color="textSecondary" gutterBottom>
-                        Update Title
+                        Beta v0.5.8
                     </Typography>
 
                     <div> 
-                        Update Discription
+                        + Added support for Docker/Containers
                     </div>
                 </Card>
 
                 <Card className="updates-card">        
                     <Typography className={styles.title} color="textSecondary" gutterBottom>
-                        Update Title
+                    Beta v0.4.0 
                     </Typography>
 
                     <div> 
-                        Update Discription
+                        + Fixed bugs with Java Deployments
                     </div>
                 </Card>
             </div>
 
             <div className="share-wrapper"> 
-                <div className="share-header">
-                    Share
-                </div>
+                    <div className="share-header">
+                        Share
+                    </div>
                 <Card className="share-social-media-card">  
                     <Typography className={styles.title} color="inherit" gutterBottom>
                         Twitter
@@ -78,6 +78,7 @@ class ProjectDashboard extends React.Component {
                     <Typography className={styles.title} color="inherit" gutterBottom>
                         Facebook
                     </Typography>
+
                 </Card>
             </div>
         </div>

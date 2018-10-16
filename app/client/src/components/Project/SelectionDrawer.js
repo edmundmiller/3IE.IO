@@ -31,7 +31,7 @@ class SelectionDrawer extends React.Component {
   render() {
 
     return (    
-      <div> 
+      <div className="selection-drawer-wrapper"> 
         <Paper square>
             <Tabs
             value={this.state.tabSelection}

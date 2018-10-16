@@ -1,11 +1,14 @@
 pragma solidity ^0.4.19;
 
-contract Hackathoncontract {
+// Uses token balances in place of ether/hbar to skirt the payable contract issue.
+
+contract HackathoncontractNp {
 
 // store balances of bounty suppliers/providers
     address public owner; //The 3IE.IO account
     bool public DEV_MODE = true; //Allows bounties to be claimed without rep requirement
 
+    mapping (address => uint) public token_balance_map;
     mapping (bytes32 => uint) public bounty_map;
     mapping (bytes32 => uint) public payout_map;
     mapping (bytes32 => uint) public minimum_rep_map;
@@ -17,6 +20,7 @@ contract Hackathoncontract {
 
     constructor() public {
         owner = msg.sender;
+        token_balance_map[owner] = 1000000;
     }
 
     function safe_add(uint x, uint y) internal pure returns (uint z) {
@@ -31,8 +35,12 @@ contract Hackathoncontract {
 
 
 
-    function create_bounty(bytes32 _hash, uint _payout, uint min_rep) public payable returns (bool success) {
-        bounty_map[_hash] = safe_add(bounty_map[_hash], msg.value);
+// _totalpayout is the total amount of the bounty, _payout is PER interaction; so 100_000 _totalpayout for 1000 _payout 
+// would yield 100 payouts of 1000 tokens
+    function create_bounty(bytes32 _hash, uint _totalpayout, uint _payout, uint min_rep) public returns (bool success) {
+        assert(token_balance_map[msg.sender] >= _totalpayout); 
+        token_balance_map[msg.sender] = safe_subtract(token_balance_map[msg.sender], _totalpayout);
+        bounty_map[_hash] = safe_add(bounty_map[_hash], _totalpayout);
         payout_map[_hash] = safe_add(0, _payout);
         minimum_rep_map[_hash] = min_rep;
         return true;
@@ -45,20 +53,13 @@ contract Hackathoncontract {
             has_used[_claimant][_hash] == true;
         }
         bounty_map[_hash] = safe_subtract(bounty_map[_hash], payout_map[_hash]);
-        _claimant.transfer(payout_map[_hash]);
+        token_balance_map[msg.sender] = safe_add(payout_map[_hash], token_balance_map[msg.sender]);
         return true;
     }
 
-    function release_escrowed(address _recipient, uint _amt) public returns (bool success) {
-        assert(msg.sender == owner);
-        assert(escrowed_bounties[_recipient] >= _amt);
-        escrowed_bounties[_recipient] = safe_subtract(escrowed_bounties[_recipient], _amt);
-        _recipient.transfer(_amt);
-        return true;
-    }
 
     function set_dev_mode(bool _mode) public returns (bool success) {
-        require(msg.sender == owner);
+        assert(msg.sender == owner);
         if(DEV_MODE) DEV_MODE = false;
         else {DEV_MODE = true;}
         return true;

@@ -39,6 +39,11 @@
 }
 
 .project-label-subtext {
+    margin-top: 20px;
+    margin-left: -190px;
+    text-align: justify;
+    text-align-last: center;
+    width: 450px;
     color: grey;
 }
 

@@ -25,7 +25,7 @@ const ProjectHeader = ({ }) => {
                     </Typography>
 
                     <div className="project-label-subtext"> 
-                        A new platform to build a decentralized web hosting. Users will upload 
+                        A platform to build a decentralized web hosting. Users will upload 
                         compatatible code into the hedera file system, and the hosting 
                         will be deployed to a user network. Micropayments will directly 
                         pay users who donate computer power. 

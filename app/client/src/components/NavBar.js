@@ -20,7 +20,7 @@ import HomeIcon from '@material-ui/icons/HomeRounded';
 import InfoIcon from '@material-ui/icons/InfoRounded';
 import CodeIcon from '@material-ui/icons/CodeRounded';
 import NewsIcon from '@material-ui/icons/ReceiptRounded';
-import '../css/NavBar.css';
+import '../css/Navbar.css';
 
 const styles = theme => ({
   root: {

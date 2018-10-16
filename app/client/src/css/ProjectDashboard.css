@@ -1,8 +1,3 @@
-
-body {
-
-}
-  
 .project-outer-wrapper {
     background-color: #485461;
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
@@ -37,6 +32,7 @@ body {
 .project-label {
     margin: 20px;
     width: 35%;
+    color: white;
 }
 
 .project-team-wrapper {
@@ -83,12 +79,36 @@ body {
     margin-left: 13%;
 }
 
+
 .actions-card {
     margin-top: 10px;
     margin-left: 1%;
-    width: 8%;
+    width: 12%;
+    height: 50px;
     text-align: center;
-    
+    color: white;
+    background-color: #06bcfb;
+    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
+}
+
+.actions-card-selected {
+    margin-top: 10px;
+    margin-left: 1%;
+    width: 48%;
+    height: 300px;
+    text-align: center;
+    color: white;
+    background-color: #06bcfb;
+    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
+}
+
+.actions-github-link {
+    color: blue;
+}
+
+
+.audit-wrapper {
+    width: 500px;
 }
 
 .updates-share-wrapper {
@@ -100,9 +120,11 @@ body {
 
 .updates-wrapper {
     width: 60%;
+    margin: 10px;
     display: flex; 
     align-items: flex-start;
     flex-direction: column;
+    color: white;
 }
 
 .updates-card {
@@ -110,8 +132,8 @@ body {
     margin-top: 15px;
     width: 100%;
     color: white;
-    background-color: #4062bb;
-    background-image: linear-gradient(316deg, #4062bb 0%, #5200ae 74%);
+    background-color: #06bcfb;
+    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
 }
 
 .share-wrapper {
@@ -119,6 +141,11 @@ body {
     margin-top: 2%;
     width: 15%;
     color: white;
+}
+
+.share-social-media-card {
+    background-color: #06bcfb;
+    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
 }
 
 .selection-drawer-wrapper {
@@ -129,7 +156,7 @@ body {
 }
 
 .selection-drawer-paper {
-    background-color: #4062bb;
-    background-image: linear-gradient(316deg, #4062bb 0%, #5200ae 74%);
+    background-color: #06bcfb;
+    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
     color: white;
 }

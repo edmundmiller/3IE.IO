@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import ProjectHeader from './ProjectHeader';
-import Actions from './Actions';
+import Audit from './Audit';
 import SelectionDrawer from './SelectionDrawer';
 import MessagingCard from './MessagingCard';
 import styles from '../../css/ProjectDashboard.css';
@@ -40,14 +40,11 @@ class ProjectDashboard extends React.Component {
 
         <MessagingCard />
 
-        <Actions />
+        <Audit />
 
         <div className="updates-share-wrapper">
             <div className="updates-wrapper"> 
-                <Typography className={styles.title} color="textSecondary" gutterBottom>
                     Updates
-                </Typography>
-
                 <Card className="updates-card">        
                     <Typography className={styles.title} color="textSecondary" gutterBottom>
                         Update Title

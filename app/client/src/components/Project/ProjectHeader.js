@@ -11,10 +11,8 @@ const ProjectHeader = ({ }) => {
         <div className="project-wrapper">
                 <div className="project-card">
                     <img src={Ourlogo} className="project-logo" />
-                    <div className="project-header-title"> 
-                        
-                            Project Name
-                        
+                    <div className="project-header-title">    
+                        Project Name
                     </div>
                 </div>
 

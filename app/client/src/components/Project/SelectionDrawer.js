@@ -39,18 +39,12 @@ class SelectionDrawer extends React.Component {
             <Tab label="Comments" />
             <Tab label="Contact" />
             <Tab label="More Info" />
-          </Tabs>
+            </Tabs>
 
-          {this.state.tabSelection === 0 && (
-            <TabContainer>Comments</TabContainer>
-          )}
-          {this.state.tabSelection === 1 && (
-            <TabContainer>Contact</TabContainer>
-          )}
-          {this.state.tabSelection === 2 && (
-            <TabContainer>More Info</TabContainer>
-          )}
-        </Paper>
+            {this.state.tabSelection === 0 &&<TabContainer>No Comments</TabContainer>}
+            {this.state.tabSelection === 1 &&<TabContainer>Contact</TabContainer>}
+            {this.state.tabSelection === 2 &&<TabContainer>More Info</TabContainer>}
+      </Paper>
       </div>
     )
   }

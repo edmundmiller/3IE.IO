@@ -11,27 +11,29 @@ const TeamContainer = ({}) => {
     <div className="project-team-wrapper">
       <div className="project-team-header">Meet The Team:</div>
 
-      <Card className="team-member-card">
-        <img src={ExamplePortfolioOne} className="team-member-profile-image" />
-        <div>
-          Becky
-          <Typography className={styles.title} color="inherit" gutterBottom>
-            HR
-          </Typography>
-        </div>
-      </Card>
+                    <Card className="team-member-card">
+                        <img src={ExamplePortfolioOne} className="team-member-profile-image" />
+                        <div>
+                                Becky Ross
+                            <Typography className={styles.title} color="inherit" gutterBottom>
+                                Front End Developer
+                            </Typography>
+                        </div>
 
-      <Card className="team-member-card">
-        <img src={ExamplePortfolioTwo} className="team-member-profile-image" />
-        <div>
-          Name
-          <Typography className={styles.title} color="inherit" gutterBottom>
-            Role
-          </Typography>
-        </div>
-      </Card>
-    </div>
-  )
+                        
+                    </Card>
+
+                    <Card className="team-member-card">
+                        <img src={ExamplePortfolioTwo} className="team-member-profile-image" />
+                        <div>
+                            Charles Forrest
+                            <Typography className={styles.title} color="inherit" gutterBottom>
+                                Backend Developer
+                            </Typography>
+                        </div>                  
+                    </Card>
+                </div>
+    );
 }
 
 export default TeamContainer

@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Card from '@material-ui/core/Card'
 import Paper from '@material-ui/core/Paper'
@@ -19,6 +20,7 @@ class Audit extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
+
   handleClick = event => {
     this.setState({ clicked: false })
     console.log(rewardAuditWithMicroPayment())
@@ -29,29 +31,26 @@ class Audit extends React.Component {
   }
 
   render() {
-    let AuditForm = (
-      <div className="audit-card-selected-wrapper">
-        <a href="www.github.com/hederaProject">www.github.com/hederaProject </a>
-        <p>Have you audited the github?</p>
-        <div>
-          <TextField
-            className="audit-text-input"
-            id="outlined-multiline-flexible"
-            label="Feedback"
-            multiline
-            rowsMax="8"
-            margin="normal"
-            variant="outlined"
-          />
+    let AuditForm = (<div className="audit-card-selected-wrapper">
+        <a href="www.github.com/hederaProject" target="_blank">www.github.com/hederaProject </a>
+        <p>Have you audited the project?</p>
+        <Checkbox /> <span style={{color: 'green'}}> Yes </span>
+        <Checkbox /> <span style={{color: 'red'}}> No </span> 
+        <div> 
+        <TextField
+          className="audit-text-input"
+          id="outlined-multiline-flexible"
+          label="Feedback"
+          multiline
+          rowsMax="8"
+          margin="normal"
+          variant="outlined"
+        />
         </div>
-        <div className="audit-button">
-          <Button
-            onClick={this.handleClick}
-            variant="contained"
-            color="secondary"
-          >
-            Submit
-          </Button>
+        <div className="audit-button"> 
+            <Button  onClick={this.handleClick} variant="contained" color="primary">
+                Submit
+            </Button>
         </div>
       </div>
     )

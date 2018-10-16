@@ -42,44 +42,44 @@ class ProjectDashboard extends React.Component {
         <Audit />
 
         <div className="updates-share-wrapper">
-          <div className="updates-wrapper">
-            Updates
-            <Card className="updates-card">
-              <Typography
-                className={styles.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                Update Title
-              </Typography>
+            <div className="updates-wrapper"> 
+                        Updates
+                <Card className="updates-card">        
+                    <Typography className={styles.title} color="textSecondary" gutterBottom>
+                        Beta v0.5.8
+                    </Typography>
 
-              <div>Update Discription</div>
-            </Card>
-            <Card className="updates-card">
-              <Typography
-                className={styles.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                Update Title
-              </Typography>
+                    <div> 
+                        + Added support for Docker/Containers
+                    </div>
+                </Card>
 
-              <div>Update Discription</div>
-            </Card>
-          </div>
+                <Card className="updates-card">        
+                    <Typography className={styles.title} color="textSecondary" gutterBottom>
+                    Beta v0.4.0 
+                    </Typography>
 
-          <div className="share-wrapper">
-            <div className="share-header">Share</div>
-            <Card className="share-social-media-card">
-              <Typography className={styles.title} color="inherit" gutterBottom>
-                Twitter
-              </Typography>
+                    <div> 
+                        + Fixed bugs with Java Deployments
+                    </div>
+                </Card>
+            </div>
 
-              <Typography className={styles.title} color="inherit" gutterBottom>
-                Facebook
-              </Typography>
-            </Card>
-          </div>
+            <div className="share-wrapper"> 
+                    <div className="share-header">
+                        Share
+                    </div>
+                <Card className="share-social-media-card">  
+                    <Typography className={styles.title} color="inherit" gutterBottom>
+                        Twitter
+                    </Typography>
+
+                    <Typography className={styles.title} color="inherit" gutterBottom>
+                        Facebook
+                    </Typography>
+
+                </Card>
+            </div>
         </div>
 
         <SelectionDrawer />

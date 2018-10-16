@@ -19,12 +19,15 @@
 }
 
 .project-logo {
+    margin-top: 5px;
     width: 60px;
     height: 60px;
 }
 
 .project-header-title {
+    margin-top: 15px;
     margin-left: 25px;
+    font-size: 20;
     line-height: 3;
     color: white;
 }
@@ -33,6 +36,15 @@
     margin: 20px;
     width: 35%;
     color: white;
+}
+
+.project-label-subtext {
+    margin-top: 20px;
+    margin-left: -190px;
+    text-align: justify;
+    text-align-last: center;
+    width: 450px;
+    color: grey;
 }
 
 .project-team-wrapper {
@@ -55,8 +67,8 @@
     margin: 10px;
     padding: 10px;
     width: 100%;
-    background-color: #4062bb;
-    background-image: linear-gradient(316deg, #4062bb 0%, #5200ae 74%);
+    background-color: #3f51b5;
+    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
     color: white;
 }
 
@@ -68,6 +80,9 @@
 .social-media-card {
     margin: 10px;
     margin-right: 30px;
+    border: 2px solid #4062bb;
+    padding: 8px;
+    border-radius: 7px;
     width: 15%;
     min-height: 150px;
     text-align: center;
@@ -82,7 +97,7 @@
     margin: 10px;
     padding: 5px;
     border-radius: 5px;
-    background-color: blue;
+    background-color: green;
     color: white;
     text-decoration: none;
 }
@@ -115,7 +130,7 @@
 .actions-card-selected {
     margin-top: 10px;
     margin-left: 1%;
-    width: 48%;
+    width: 51%;
     height: 300px;
     text-align: center;
     color: blue;
@@ -133,7 +148,7 @@
 .audit-button {
     float: right;
     margin-top: -55px;
-    margin-right: 90px;
+    margin-right: 120px;
 }
 
 .updates-share-wrapper {
@@ -174,11 +189,10 @@
 }
 
 .share-social-media-card {
-    background-color: #06bcfb;
-    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
+    background-color: white;
     text-align: center;
     font-size: 30px;
-    color: blue;
+    color: #007bff;
 }
 
 .selection-drawer-wrapper {
@@ -189,7 +203,6 @@
 }
 
 .selection-drawer-paper {
-    background-color: #06bcfb;
-    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
+    background-color: #f0f8ff;
     color: white;
 }

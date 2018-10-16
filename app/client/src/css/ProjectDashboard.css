@@ -97,18 +97,18 @@
     width: 48%;
     height: 300px;
     text-align: center;
-    color: white;
-    background-color: #06bcfb;
-    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
-}
-
-.actions-github-link {
     color: blue;
+    background-color: white;
 }
 
+.audit-text-input {
+    margin-left: 20px;
+}
 
-.audit-wrapper {
-    width: 500px;
+.audit-button {
+    float: right;
+    margin-top: -55px;
+    margin-right: 40px;
 }
 
 .updates-share-wrapper {

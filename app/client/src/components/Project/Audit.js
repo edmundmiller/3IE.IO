@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { rewardAuditWithMicroPayment } from '../../hedera';
+import Checkbox from '@material-ui/core/Checkbox';
 import styles from '../../css/ProjectDashboard.css';
 
 class Audit extends React.Component {
@@ -33,6 +34,8 @@ class Audit extends React.Component {
     let AuditForm = (<div className="audit-card-selected-wrapper">
         <a href="www.github.com/hederaProject">www.github.com/hederaProject </a>
         <p>Have you audited the github?</p>
+        <Checkbox /> <span style={{color: 'green'}}> Yes </span>
+        <Checkbox /> <span style={{color: 'red'}}> No </span> 
         <div> 
         <TextField
           className="audit-text-input"

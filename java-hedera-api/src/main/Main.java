@@ -26,6 +26,7 @@ public final class Main
 
 	private static final HederaNode DEFAULT_DEST_NODE = new HederaNode(nodeAddress, nodePort, new HederaAccountID(0, 0, 3));
 	private static final HederaDuration DEFAULT_DURATION = new HederaDuration(120, 0);
+	private static final HederaAccountID DEFAULT_ACC_ID = new HederaAccountID(0, 0, 1004);
 
 	public static final HederaCryptoKeyPair keyPair = initKeyPair();
 	public static final int DEFAULT_TIMEOUT = 1000;
@@ -40,6 +41,11 @@ public final class Main
 		{
 			return null;
 		}
+	}
+
+	public static HederaTransactionAndQueryDefaults defaultTXSettings()
+	{
+		return generateQueryDefaults("NA", DEFAULT_DEST_NODE, DEFAULT_ACC_ID, keyPair, DEFAULT_DURATION);
 	}
 
 	public static HederaTransactionAndQueryDefaults generateQueryDefaults(String memo, HederaNode destNode, HederaAccountID reqSourceID, HederaCryptoKeyPair reqSourceKeyPair,

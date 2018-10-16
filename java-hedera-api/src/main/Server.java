@@ -2,8 +2,6 @@ package main;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -13,10 +11,6 @@ import java.util.Date;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
-import com.hedera.sdk.account.HederaAccount;
-import com.hedera.sdk.common.HederaKey.KeyType;
-import com.hedera.sdk.cryptography.HederaCryptoKeyPair;
 
 // The tutorial can be found just here on the SSaurel's Blog :
 // https://www.ssaurel.com/blog/create-a-simple-http-web-server-in-java

@@ -101,6 +101,10 @@
     background-color: white;
 }
 
+.audit-card-selected-wrapper {
+    margin-top: 30px;
+}
+
 .audit-text-input {
     margin-left: 20px;
 }

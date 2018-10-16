@@ -28,7 +28,7 @@ class Audit extends React.Component {
 
     
   render() {
-    let AuditForm = (<div>
+    let AuditForm = (<div className="audit-card-selected-wrapper">
         <a href="www.github.com/hederaProject">www.github.com/hederaProject </a>
         <p>Have you audited the github?</p>
         <div> 

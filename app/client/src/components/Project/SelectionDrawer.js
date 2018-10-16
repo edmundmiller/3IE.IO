@@ -32,7 +32,7 @@ class SelectionDrawer extends React.Component {
 
     return (    
       <div className="selection-drawer-wrapper"> 
-        <Paper square>
+        <Paper className="selection-drawer-paper" square>
             <Tabs
             value={this.state.tabSelection}
             onChange={this.handleChange}
@@ -44,7 +44,6 @@ class SelectionDrawer extends React.Component {
             <Tab label="More Info" />
             </Tabs>
 
-            
             {this.state.tabSelection === 0 &&<TabContainer>Comments</TabContainer>}
             {this.state.tabSelection === 1 &&<TabContainer>Contact</TabContainer>}
             {this.state.tabSelection === 2 &&<TabContainer>More Info</TabContainer>}

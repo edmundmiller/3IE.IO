@@ -20,7 +20,6 @@ class Audit extends React.Component {
 
     handleClick = (event) => {
         this.setState({ clicked: false });
-        alert(this.state.clicked)
     }
 
     handleChange = (event) => {
@@ -29,9 +28,12 @@ class Audit extends React.Component {
 
     
   render() {
-    let AuditForm = (<div>www.github.com/hederaProject 
+    let AuditForm = (<div className="audit-card-selected-wrapper">
+        <a href="www.github.com/hederaProject">www.github.com/hederaProject </a>
         <p>Have you audited the github?</p>
+        <div> 
         <TextField
+          className="audit-text-input"
           id="outlined-multiline-flexible"
           label="Feedback"
           multiline
@@ -39,10 +41,13 @@ class Audit extends React.Component {
           margin="normal"
           variant="outlined"
         />
-        <Button onClick={this.handleClick} variant="contained" color="secondary">
-            Submit
-        </Button>
-        </div>);
+        </div>
+        <div className="audit-button"> 
+            <Button  onClick={this.handleClick} variant="contained" color="secondary">
+                Submit
+            </Button>
+        </div>
+    </div>);
     let cardClass = this.state.clicked ?  "actions-card-selected" : "actions-card";
     let otherActions = !this.state.clicked && (<Card className="actions-card"><div>Github</div></Card>);
     

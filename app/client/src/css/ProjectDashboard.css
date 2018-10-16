@@ -37,6 +37,11 @@
 
 .project-team-wrapper {
     width: 20%;
+    color: white;
+}
+
+.project-team-header {
+    margin: 10px;
 }
 
 .team-member-profile-image {
@@ -97,18 +102,22 @@
     width: 48%;
     height: 300px;
     text-align: center;
-    color: white;
-    background-color: #06bcfb;
-    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
-}
-
-.actions-github-link {
     color: blue;
+    background-color: white;
 }
 
+.audit-card-selected-wrapper {
+    margin-top: 30px;
+}
 
-.audit-wrapper {
-    width: 500px;
+.audit-text-input {
+    margin-left: 20px;
+}
+
+.audit-button {
+    float: right;
+    margin-top: -55px;
+    margin-right: 90px;
 }
 
 .updates-share-wrapper {

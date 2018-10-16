@@ -6,6 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { getBalance, rewardAuditWithMicroPayment } from '../../hedera/index';
 import styles from '../../css/ProjectDashboard.css';
 
 class Audit extends React.Component {
@@ -20,6 +21,7 @@ class Audit extends React.Component {
 
     handleClick = (event) => {
         this.setState({ clicked: false });
+        console.log(rewardAuditWithMicroPayment());
     }
 
     handleChange = (event) => {

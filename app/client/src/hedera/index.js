@@ -32,10 +32,10 @@ const rewardAuditWithMicroPayment = (contractHex, accountID, amount) => {
     quantity: 0,
   }
 
-  formData.contractHex = contractHex
-  formData.accountID = accountID
-  formData.request = 'payment'
-  formData.quantity = amount
+  formData.contractHex = contractHex;
+  formData.accountID = accountID;
+  formData.request = 'payment';
+  formData.quantity = amount;
 
   request.post({
     url:'http://localhost:8080/',

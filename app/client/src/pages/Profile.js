@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-
 import Avatar from '../components/profile/Avatar';
-// import Avatar from '@material-ui/core/Avatar';
 import Info from '../components/profile/Info';
+import Descriptions from '../components/profile/Descriptions';
+import '../css/Profile.css';
 
 class Profile extends Component {
   constructor (props) {
@@ -15,14 +15,9 @@ class Profile extends Component {
 
   render() {
     return (
-      <div>
-        {/* <Avatar
-          alt="Leemon Baird"
-          src="../images/Leemon-752x506.jpg"
-          className='avatar-profile'
-        /> */}
-        <Avatar />
+      <div className='Profile'>
         <Info />
+        <Descriptions />
       </div>
     );
   }

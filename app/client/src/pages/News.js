@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
+import '../css/News.css'
 
-class Project extends Component {
+class News extends Component {
   constructor (props) {
     super(props)
     this.state ={
@@ -10,11 +11,11 @@ class Project extends Component {
 
   render() {
     return(
-      <div>
+      <div className='News'>
         <h1>Hello, this is the news & content page</h1>
       </div>
     )
   }
 }
 
-export default Project
+export default News;

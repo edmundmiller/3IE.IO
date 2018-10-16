@@ -13,24 +13,24 @@ const styles = {
     margin: 10,
   },
   bigAvatar: {
-    width: 600,
-    height: 600,
+    width: 200,
+    height: 200,
   },
 };
 
-function AAvatar() {
+function ImageAvatars(props) {
+  const { classes } = props;
   return (
-    <div>
       <Avatar
         alt="Leemon Baird"
-        src="../images/Leemon-752x506.jpg"
+        src="https://pbs.twimg.com/profile_images/914199620556935169/as44o2MI.jpg"
+        className={classNames(classes.avatar, classes.bigAvatar)}
       />
-    </div>
   );
 }
 
-AAvatar.propTypes = {
+ImageAvatars.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AAvatar);
+export default withStyles(styles)(ImageAvatars);

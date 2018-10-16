@@ -1,4 +1,5 @@
 import React from 'react';
+import Avatar from './Avatar';
 
 class Info extends React.Component {
 	constructor(props) {
@@ -10,8 +11,9 @@ class Info extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<h1>this is my info</h1>
+			<div className='profile-info'>
+				<Avatar />
+				<h1>Leemon Baird</h1>
 			</div>
 		);
 	}

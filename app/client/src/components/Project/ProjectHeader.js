@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ExampleProjectLogo from '../../images/ncUG3A1O_400x400.jpg';
 import BetterLogo from '../../resources/example-Logo.svg';
@@ -33,9 +34,9 @@ const ProjectHeader = ({ }) => {
                     </div>
                 </div>  
 
-                <TeamContainer />
-        </div>
-    );
+      <TeamContainer />
+    </div>
+  )
 }
 
-export default ProjectHeader;
+export default ProjectHeader

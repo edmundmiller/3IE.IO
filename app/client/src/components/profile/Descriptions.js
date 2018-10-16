@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Paper from './paper';
 import Exp from './exp';
@@ -13,4 +14,4 @@ class Descriptions extends React.Component {
 	}
 }
 
-export default Descriptions;
+export default Descriptions

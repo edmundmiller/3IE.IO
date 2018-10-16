@@ -1,41 +1,40 @@
-import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import ExampleProjectLogo from '../../images/ncUG3A1O_400x400.jpg';
-import Card from '@material-ui/core/Card';
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import ProjectHeader from './ProjectHeader';
-import Audit from './Audit';
-import SelectionDrawer from './SelectionDrawer';
-import MessagingCard from './MessagingCard';
-import styles from '../../css/ProjectDashboard.css';
+import React from 'react'
+import Typography from '@material-ui/core/Typography'
+import ExampleProjectLogo from '../../images/ncUG3A1O_400x400.jpg'
+import Card from '@material-ui/core/Card'
+import Paper from '@material-ui/core/Paper'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
+import ProjectHeader from './ProjectHeader'
+import Audit from './Audit'
+import SelectionDrawer from './SelectionDrawer'
+import MessagingCard from './MessagingCard'
+import styles from '../../css/ProjectDashboard.css'
 
-function TabContainer({ children}) {
-    return (
-      <Typography component="div" dir="left" style={{ padding: 8 * 3 }}>
-        {children}
-      </Typography>
-    );
-  }
+function TabContainer({ children }) {
+  return (
+    <Typography component="div" dir="left" style={{ padding: 8 * 3 }}>
+      {children}
+    </Typography>
+  )
+}
 
 class ProjectDashboard extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            tabSelection: 0,
-        };
-        this.handleChange = this.handleChange.bind(this);
+  constructor(props) {
+    super(props)
+    this.state = {
+      tabSelection: 0,
     }
+    this.handleChange = this.handleChange.bind(this)
+  }
 
-    handleChange = (event, value) => {
-        this.setState({ tabSelection: value  });
-    };
+  handleChange = (event, value) => {
+    this.setState({ tabSelection: value })
+  }
 
-    
   render() {
-    return (    
-      <div className="project-outer-wrapper"> 
+    return (
+      <div className="project-outer-wrapper">
         <ProjectHeader />
 
         <MessagingCard />
@@ -83,11 +82,10 @@ class ProjectDashboard extends React.Component {
             </div>
         </div>
 
-      <SelectionDrawer />
-      
+        <SelectionDrawer />
       </div>
-    );
+    )
   }
 }
 
-export default (ProjectDashboard);
+export default ProjectDashboard

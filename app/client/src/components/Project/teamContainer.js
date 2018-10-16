@@ -1,17 +1,15 @@
-import React from 'react';
-import ExampleProjectLogo from '../../images/ncUG3A1O_400x400.jpg';
-import ExamplePortfolioOne from '../../resources/profileOne.png';
-import ExamplePortfolioTwo from '../../resources/ProfileThree.png';
-import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import styles from '../../css/ProjectDashboard.css';
+import React from 'react'
+import ExampleProjectLogo from '../../images/ncUG3A1O_400x400.jpg'
+import ExamplePortfolioOne from '../../resources/profileOne.png'
+import ExamplePortfolioTwo from '../../resources/ProfileThree.png'
+import Typography from '@material-ui/core/Typography'
+import Card from '@material-ui/core/Card'
+import styles from '../../css/ProjectDashboard.css'
 
-const TeamContainer = ({ }) => {
-    return (
-        <div className="project-team-wrapper"> 
-                    <div className="project-team-header">
-                        Meet The Team:
-                    </div>
+const TeamContainer = ({}) => {
+  return (
+    <div className="project-team-wrapper">
+      <div className="project-team-header">Meet The Team:</div>
 
                     <Card className="team-member-card">
                         <img src={ExamplePortfolioOne} className="team-member-profile-image" />
@@ -38,4 +36,4 @@ const TeamContainer = ({ }) => {
     );
 }
 
-export default TeamContainer;
+export default TeamContainer

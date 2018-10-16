@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Avatar from './Avatar';
 import Desc from './infoHelp';
@@ -20,4 +21,4 @@ class Info extends React.Component {
 	}
 }
 
-export default Info;
+export default Info

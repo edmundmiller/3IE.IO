@@ -6,16 +6,16 @@ import NavBar from './NavBar'
 // pages that the router draws from
 import Landing from '../pages/Landing';
 import Profile from '../pages/Profile';
+
 import ExploreProjects from '../pages/ExploreProjects';
 import Project from '../pages/Project';
 // Auth
 import Signup from '../pages/signUp';
-import Login from '../pages/LogIn';
+import LogIn from '../pages/LogIn';
 // Static
 import About from '../pages/About'
 import Membership from '../pages/Membership'
 import News from '../pages/News'
-import '../css/App.css';
 
 class App extends React.Component {
   render() {
@@ -27,12 +27,12 @@ class App extends React.Component {
         <Switch>
             <Route exact path="/" component={Landing} />
             <Route path="/profile" component={Profile} />
-            <Route path="/projects" component={ExploreProjects} />
+            <Route path="/projects" component={Project} />
             <Route path="/projects/:id" component={Project} />
             
             {/* Login & Signup Routes */}
             <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" component={LogIn} />
 
             {/* News */}
             <Route path="/membership" component={Membership} />

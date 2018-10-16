@@ -6,11 +6,15 @@ import NavBar from './NavBar'
 // pages that the router draws from
 import Landing from '../pages/Landing';
 import Profile from '../pages/Profile';
+<<<<<<< HEAD
 import Project from '../pages/Project';
+=======
+
+>>>>>>> 503a61a5021ff8cda4542845082ab601000a3e9b
 import ExploreProjects from '../pages/ExploreProjects';
 // Auth
 import Signup from '../pages/signUp';
-import Login from '../pages/LogIn';
+import LogIn from '../pages/LogIn';
 // Static
 import About from '../pages/About'
 import Membership from '../pages/Membership'
@@ -29,12 +33,12 @@ class App extends React.Component {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/project" component={Project} />
             <Route path="/profile" component={Profile} />
-            <Route path="/projects" component={ExploreProjects} />
+            <Route path="/projects" component={Project} />
             <Route path="/projects/:id" component={Project} />
             
             {/* Login & Signup Routes */}
             <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" component={LogIn} />
 
             {/* News */}
             <Route path="/membership" component={Membership} />

@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+predarkestdark.syntaxcolor.comment=199,221,12
+predarkestdark.syntaxcolor.live.bracket.matching.color=255,198,0
+predarkestdark.syntaxcolor.live.bracket.matching.enabled=true
+predarkestdark.syntaxcolor.number.literal=127,179,71
+predarkestdark.syntaxcolor.private.non.system.symbol=190,214,255
+predarkestdark.syntaxcolor.public.non.system.symbols=210,82,82
+predarkestdark.syntaxcolor.string.literal=255,198,0
+predarkestdark.syntaxcolor.symbol.conflict.local=210,82,82
+predarkestdark.syntaxcolor.symbol.local=121,171,255
+predarkestdark.syntaxcolor.symbol.package=190,214,255
+predarkestdark.syntaxcolor.symbol.system=141,203,226

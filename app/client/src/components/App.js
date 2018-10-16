@@ -11,7 +11,7 @@ import Project from '../pages/Project';
 import ExploreProjects from '../pages/ExploreProjects';
 // Auth
 import Signup from '../pages/signUp';
-import LogIn from '../pages/logIn';
+import LogIn from '../pages/LogIn';
 // Static
 import About from '../pages/About'
 import Membership from '../pages/Membership'

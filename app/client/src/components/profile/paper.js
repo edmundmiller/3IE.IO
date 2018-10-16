@@ -19,10 +19,19 @@ function PaperSheet(props) {
     <div className='profile-paper'>
       <Paper className={classes.root} elevation={1}>
         <Typography variant="h5" component="h3">
-          Lorem ipsum
+          Experience
         </Typography>
         <Typography component="p">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<ul>
+						<li><b>CTO of Hedera Hashgraph</b></li>
+						<li>PhD in Computer Science from Carnegie Mellon University</li>
+						<li>Co-founder and CTO of Trio Security, and later BlueWave Security, both of which were acquired</li>
+						<li>Professor of Computer Science at the Air Force Academy</li>
+						<li>Currently co-founder and CTO of Swirlds Inc, which builds software for distributed consensus based on the hashgraph consensus algorithm.</li>
+						<li>Adjunct professor or PhD committee member at University of Colorado at Colorado Springs, and Denver University, and University of Cincinnati. Visiting professor at KAUST University.</li>
+						<li>Research scientist in the Air Force Research Laboratory, and at the Academy Center for Cyberspace Security</li>
+						<li>US Air Force Lt Col (ret), 1985-2009. US Air Force Academy, class of 1989.</li>
+					</ul>					
         </Typography>
       </Paper>
     </div>

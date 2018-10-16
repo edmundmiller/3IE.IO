@@ -1,0 +1,16 @@
+{
+  "name": "3IE.IO",
+  "description": "description",
+  "version": "1.0.0",
+  "author": "Edmund Miller <Edmund.A.Miller@gmail.com>",
+  "license": "MIT",
+  "main": "app/main.js",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "hash.js": "^1.1.5",
+    "minimalistic-assert": "^1.0.1",
+    "mocha": "^5.2.0"
+  }
+}

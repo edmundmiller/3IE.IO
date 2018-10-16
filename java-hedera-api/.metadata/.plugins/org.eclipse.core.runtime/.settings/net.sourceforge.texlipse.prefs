@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+predarkestdark.cmd.TexColor=255,255,255
+predarkestdark.com.TexColor=199,221,12
+predarkestdark.crl.TexColor=121,171,255
+predarkestdark.def.BibColor=216,216,216
+predarkestdark.def.TexColor=216,216,216
+predarkestdark.equ.TexColor=255,198,0
+predarkestdark.key.BibColor=141,203,226
+predarkestdark.num.TexColor=127,179,71
+predarkestdark.slc.BibColor=199,221,12
+predarkestdark.spe.TexColor=255,255,255
+predarkestdark.sqr.TexColor=121,171,255
+predarkestdark.str.BibColor=255,198,0
+predarkestdark.typ.BibColor=210,82,82
+predarkestdark.verb.TexColor=190,214,255

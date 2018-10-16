@@ -9,7 +9,7 @@ const config = {
   databaseURL: 'https://hedera18-1be26.firebaseio.com',
   projectId: 'hedera18-1be26',
   storageBucket: 'hedera18-1be26.appspot.com',
-  messagingSenderId: '3997116526'
+  messagingSenderId: '3997116526',
 }
 
 if (!firebase.apps.length) {
@@ -20,8 +20,4 @@ const auth = firebase.auth()
 const firestore = firebase.firestore()
 firestore.settings({ timestampsInSnapshots: true })
 
-export {
-  auth,
-  firestore,
-  firebase
-}
+export { auth, firestore, firebase }

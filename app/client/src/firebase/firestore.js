@@ -23,13 +23,22 @@ export const createNewUserInfo = (user, username) => {
     email: user.email,
     dateCreated: moment().format(),
   }
-  firestore.collection('users').doc(user.uid).set(userInformation)
-  firestore.collection('usernames').doc(username).set({exists: true})
+  firestore
+    .collection('users')
+    .doc(user.uid)
+    .set(userInformation)
+  firestore
+    .collection('usernames')
+    .doc(username)
+    .set({ exists: true })
   return userInformation
 }
 
-export const addUsername = (username) => {
-  firestore.collection('usernames').doc(username).set({exists: true})
+export const addUsername = username => {
+  firestore
+    .collection('usernames')
+    .doc(username)
+    .set({ exists: true })
 }
 
 export const getTournaments = () => {

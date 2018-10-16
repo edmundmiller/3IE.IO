@@ -1,26 +1,26 @@
-import React, {Component} from 'react';
-import Avatar from '../components/profile/Avatar';
-import Info from '../components/profile/Info';
-import Descriptions from '../components/profile/Descriptions';
-import '../css/Profile.css';
+import React, { Component } from 'react'
+import Avatar from '../components/profile/Avatar'
+import Info from '../components/profile/Info'
+import Descriptions from '../components/profile/Descriptions'
+import '../css/Profile.css'
 
 class Profile extends Component {
-  constructor (props) {
-    super(props);
+  constructor(props) {
+    super(props)
     this.state = {
       projects: null,
-      balance: null
-    };
+      balance: null,
+    }
   }
 
   render() {
     return (
-      <div className='Profile'>
+      <div className="Profile">
         <Info />
         <Descriptions />
       </div>
-    );
+    )
   }
 }
 
-export default Profile;
+export default Profile

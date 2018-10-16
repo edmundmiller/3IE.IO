@@ -192,7 +192,6 @@
 }
 
 .selection-drawer-paper {
-    background-color: #06bcfb;
-    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
+    background-color: #f0f8ff;
     color: white;
 }

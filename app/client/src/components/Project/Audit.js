@@ -6,7 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { rewardAuditWithMicroPayment } from '../../hedera';
+import HederaApi from '../../hedera';
 import Checkbox from '@material-ui/core/Checkbox';
 import styles from '../../css/ProjectDashboard.css';
 
@@ -22,7 +22,7 @@ class Audit extends React.Component {
 
     handleClick = (event) => {
         this.setState({ clicked: false });
-        console.log(rewardAuditWithMicroPayment('contractHex', 'accountID', 50));
+        console.log(HederaApi.rewardAuditWithMicroPayment('contractHex', 'accountID', 50));
     }
 
     handleChange = (event) => {

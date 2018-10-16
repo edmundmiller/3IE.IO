@@ -67,9 +67,9 @@ class ProjectDashboard extends React.Component {
             </div>
 
             <div className="share-wrapper"> 
-                <div className="share-header">
-                    Share
-                </div>
+                    <div className="share-header">
+                        Share
+                    </div>
                 <Card className="share-social-media-card">  
                     <Typography className={styles.title} color="inherit" gutterBottom>
                         Twitter
@@ -78,6 +78,7 @@ class ProjectDashboard extends React.Component {
                     <Typography className={styles.title} color="inherit" gutterBottom>
                         Facebook
                     </Typography>
+                    
                 </Card>
             </div>
         </div>

@@ -19,7 +19,7 @@ const MessagingCard = ({ }) => {
                     Telegraph
                 </div>
 
-                <a href="https://discord.gg/ndVGddG">
+                <a href="https://discord.gg/ndVGddG" className="social-media-subtext">
                     Join
                 </a>
             </div>
@@ -31,7 +31,7 @@ const MessagingCard = ({ }) => {
                     Slack
                 </div>
 
-                <a href="https://discord.gg/ndVGddG">
+                <a href="https://discord.gg/ndVGddG" className="social-media-subtext">
                     Join
                 </a>
                 
@@ -44,7 +44,7 @@ const MessagingCard = ({ }) => {
                     Discord
                 </div>
 
-                <a href="https://discord.gg/ndVGddG">
+                <a href="https://discord.gg/ndVGddG" className="social-media-subtext">
                     Join
                 </a>
             </div>

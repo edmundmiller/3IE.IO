@@ -77,6 +77,16 @@
     align-items: center;
 }
 
+.social-media-subtext {
+    width: 80px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+}
+
 .social-media-image {
     width: 90px;
     height: 50px;
@@ -153,8 +163,9 @@
 
 .share-wrapper {
     margin-left: 6%;
-    width: 15%;
+    width: 10%;
     color: white;
+    font-size: 20px;
 }
 
 .share-header {
@@ -165,6 +176,9 @@
 .share-social-media-card {
     background-color: #06bcfb;
     background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
+    text-align: center;
+    font-size: 30px;
+    color: blue;
 }
 
 .selection-drawer-wrapper {

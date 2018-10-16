@@ -1,0 +1,22 @@
+.Profile {
+	margin: 0 auto;
+	width: 80%;
+	background-color: rgba(255, 188, 64, 0.774);
+	height: 100%;
+}
+
+.profile-info {
+	padding: 1%;
+	background-color: chartreuse;
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.profile-descriptions {
+	padding: 1%;
+	background-color: gray;
+	width: 50%;
+	height: 100%;
+	float: right;
+}

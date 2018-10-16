@@ -1,0 +1,44 @@
+div.Landing {
+	margin: 0%;
+	padding: 0%;
+	text-align: center;
+	background-image: url("../resources/3ie.io.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 20%;
+	background-position-y: 30%;
+}
+
+.Particles {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+div.welcome {
+	margin: 0%;
+	padding: 0%;
+	color: rgb(255, 255, 255);
+	/* font-size: 500%; */
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	top: 75px;
+}
+div.welcome2 {
+  margin: 0%;
+	padding: 0%;
+	color: rgb(255, 255, 255);
+	/* font-size: 500%; */
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	top: 500px;
+}
+
+div.welcome2 h1 {
+  margin: 0px;
+  font-size: 48px;
+}
+
+div.welcome h1 {
+  margin: 0px;
+  font-size: 48px;
+}

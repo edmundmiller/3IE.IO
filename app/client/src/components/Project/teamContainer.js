@@ -16,9 +16,9 @@ const TeamContainer = ({ }) => {
                     <Card className="team-member-card">
                         <img src={ExamplePortfolioOne} className="team-member-profile-image" />
                         <div>
-                            Becky
+                                Becky Ross
                             <Typography className={styles.title} color="inherit" gutterBottom>
-                                HR
+                                Front End Developer
                             </Typography>
                         </div>
 
@@ -28,9 +28,9 @@ const TeamContainer = ({ }) => {
                     <Card className="team-member-card">
                         <img src={ExamplePortfolioTwo} className="team-member-profile-image" />
                         <div>
-                            Name
+                            Charles Forrest
                             <Typography className={styles.title} color="inherit" gutterBottom>
-                                Role
+                                Backend Developer
                             </Typography>
                         </div>                  
                     </Card>

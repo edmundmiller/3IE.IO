@@ -12,17 +12,17 @@ const ProjectHeader = ({ }) => {
                 <div className="project-card">
                     <img src={Ourlogo} className="project-logo" />
                     <div className="project-header-title" >    
-                        Project Name
+                        WebBlock
                     </div>
                 </div>
 
                 <div className="project-label">
                     <Typography variant="h5" component="h2" color="inherit">
-                       Project Title
+                       Hedera Based Webhosting
                     </Typography>
 
                     <div> 
-                        This is the Discription
+                        Decentralized AWS
                     </div>
                 </div>  
 

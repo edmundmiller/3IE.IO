@@ -118,7 +118,7 @@
 .actions-card-selected {
     margin-top: 10px;
     margin-left: 1%;
-    width: 48%;
+    width: 51%;
     height: 300px;
     text-align: center;
     color: blue;
@@ -136,7 +136,7 @@
 .audit-button {
     float: right;
     margin-top: -55px;
-    margin-right: 90px;
+    margin-right: 120px;
 }
 
 .updates-share-wrapper {

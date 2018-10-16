@@ -1,13 +1,13 @@
 package main;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Arrays;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.hedera.sdk.common.HederaFileID;
 import com.hedera.sdk.common.HederaPrecheckResult;
 import com.hedera.sdk.common.HederaTransactionReceipt;
 import com.hedera.sdk.common.HederaTransactionStatus;
@@ -17,7 +17,7 @@ import com.hedera.sdk.transaction.HederaTransactionResult;
 
 public class FileCreate
 {
-	public static boolean uploadFile(String fileName)
+	public static HederaFile uploadFile(String fileName)
 	{
 		try
 		{
@@ -31,21 +31,29 @@ public class FileCreate
 			HederaFile hf = new HederaFile();
 			hf.txQueryDefaults = Main.defaultTXSettings();
 
-			create(hf, fileCon);
+			return create(hf, fileCon);
 
-			Thread.sleep(1000);
-
-			return true;
 		} catch (Exception e)
 		{
 			e.printStackTrace();
-			return false;
+			return null;
 		}
 	}
 
 	public static void main(String... args) throws Exception
 	{
+		HederaFile result = uploadFile("contracts/Hackathoncontract.bin");
 
+		System.out.println(result);
+
+		Thread.sleep(1000);
+
+		HederaFile file = new HederaFile();
+		file.txQueryDefaults = Main.defaultTXSettings();
+
+		file.setFileID(new HederaFileID(0, 0, result.fileNum));
+
+		fileRead(file);
 	}
 
 	public static void fileRead(HederaFile file) throws Exception

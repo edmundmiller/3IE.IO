@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 /.metadata/
+=======
+build/
+node_modules/
+>>>>>>> 9727c37d0f69521cdd04d43e88c252d15a2c1804

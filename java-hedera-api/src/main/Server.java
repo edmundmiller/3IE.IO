@@ -82,6 +82,11 @@ public class Server implements Runnable
 			String connType = in.readLine();
 			String contentLength = in.readLine();
 
+			System.out.println(reqType);
+			System.out.println(host);
+			System.out.println(connType);
+			System.out.println(contentLength);
+
 			int length = Integer.parseInt(contentLength.split(":")[1].trim());
 
 			System.out.println("Length: " + length);
@@ -99,11 +104,12 @@ public class Server implements Runnable
 				if (bodyHit)
 				{
 					tLength += input.getBytes().length;
-					tBody += input + "\n";
+					tBody = tBody.concat(input + "\n");
 				}
 			}
 
-			tBody += "}";
+			if (tBody.indexOf('}') == -1)
+				tBody += "}";
 
 			System.out.println(tBody);
 
@@ -124,6 +130,8 @@ public class Server implements Runnable
 				response.put("balance", balance);
 
 				String respString = response.toJSONString();
+
+				System.out.println(respString);
 
 				respondToClient(dataOut, respString);
 			}

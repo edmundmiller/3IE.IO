@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+predarkestdark.codeStyleNormal=\#D8D8D8 | null | null | null | null | null
+predarkestdark.editorBlocknameColor=\#8DCBE2 | null | null | null | null | null
+predarkestdark.editorColorBoundarymaker=\#D8D8D8 | null | null | null | null | null
+predarkestdark.editorColorComment=\#C7DD0C | null | null | false | null | null
+predarkestdark.editorColorHeredoc=\#CCDF32 | null | null | false | null | null
+predarkestdark.editorColorKeyword=\#8DCBE2 | null | null | null | null | null
+predarkestdark.editorColorLineComment=\#C7DD0C | null | null | false | null | null
+predarkestdark.editorColorNumber=\#7FB347 | null | null | null | null | null
+predarkestdark.editorColorPHPDocComment=\#CCDF32 | null | null | false | null | null
+predarkestdark.editorColorPhpdoc=\#CCDF32 | null | null | false | null | null
+predarkestdark.editorColorString=\#FFC600 | null | null | null | null | null
+predarkestdark.editorColorTask=\#CCDF32 | null | null | false | null | null
+predarkestdark.editorColorVariable=\#79ABFF | null | null | null | null | null
+predarkestdark.editorStmtColorBoundarymaker=\#D8D8D8 | null | null | null | null | null

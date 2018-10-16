@@ -6,11 +6,8 @@ import NavBar from './NavBar'
 // pages that the router draws from
 import Landing from '../pages/Landing';
 import Profile from '../pages/Profile';
-<<<<<<< HEAD
 import Project from '../pages/Project';
-=======
 
->>>>>>> 503a61a5021ff8cda4542845082ab601000a3e9b
 import ExploreProjects from '../pages/ExploreProjects';
 // Auth
 import Signup from '../pages/signUp';

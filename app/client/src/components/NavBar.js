@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import React, {Component} from 'react';
 import logo from '../resources/3ie.io.svg';
-=======
-import React, { Component } from "react";
-import logo from "../resources/3ie.io.svg";
->>>>>>> 503a61a5021ff8cda4542845082ab601000a3e9b
 
 import "../css/Navbar.css";
 // Firebase Authentification

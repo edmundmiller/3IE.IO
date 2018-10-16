@@ -1,6 +1,29 @@
 import request from 'request'
 
+const getBalance = (accountID) => {
+  var formData = {
+    accountID: '',
+    request: ''
+  }
 
+  formData.request = 'balance'
+  formData.accountID = accountID
+
+  request.post({
+    url:'http://localhost:8080',
+    formData:formData}, function optionalCallback(err, response, body) {
+        if(err) {
+          console.log('There was an error getting the balance')
+          return -1
+        }
+
+        console.log('the balance was aquired properly')
+        console.log(response)
+        console.log(body)
+
+        return response
+    })
+}
 const rewardAuditWithMicroPayment = (contractHex, accountID, amount) => {
   var formData = {
     contractHex: '',
@@ -34,5 +57,6 @@ const rewardCreatorWithMicroPayment = () => {
 
 export default {
   rewardAuditWithMicroPayment,
-  rewardCreatorWithMicroPayment
-}
+  rewardCreatorWithMicroPayment,
+  getBalance
+};

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import NavBar from './NavBar'
+import Nav from './nav';
 
 // pages that the router draws from
 import Landing from '../pages/Landing';
@@ -24,7 +25,8 @@ class App extends React.Component {
       <div>
       <Router>
         <div>
-          <NavBar />
+          {/* <NavBar /> */}
+          <Nav />
         <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/profile" component={Profile} />
@@ -39,7 +41,6 @@ class App extends React.Component {
 
             {/* News */}
             <Route path="/membership" component={Membership} />
-            <Route path="/about" component={About} />
             <Route path="/news" component={News} />
         </Switch>
         </div>

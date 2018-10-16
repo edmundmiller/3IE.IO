@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from '../resources/3ie.io.svg';
 
 import "../css/Navbar.css";
 // Firebase Authentification
@@ -19,7 +18,7 @@ class NavBar extends Component {
         <ul clasName="nav-bar">
           <li>
             <Link className="nav-item" to="/">
-              <img className="logo" src={logo} alt="logo" />
+              Home
             </Link>
           </li>
           <li>

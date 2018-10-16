@@ -1,8 +1,11 @@
 .navBar {
-  position: relative;
+  position: absolute;
   width: 100%;
   margin-top: 2vh;
+  /* margin: 0; */
+  /* padding: 0; */
   display: inline-block;
+  z-index: 10;
 }
 .logo {
   width: 80px;
@@ -19,8 +22,18 @@ ul li {
 }
 
 .nav-item {
-  color: white;
+  color: rgb(255, 176, 40);
   text-decoration: none;
+}
+
+.nav-item:hover {
+  color:white;
+  background-color: rgb(255, 176, 40);
+  border-radius: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .auth-base {

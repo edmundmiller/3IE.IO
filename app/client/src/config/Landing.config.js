@@ -1,20 +1,20 @@
 const params = {
 	"particles": {
 		"number": {
-			"value": 80,
+			"value": 40,
 			"density": {
 				"enable": true,
-				"value_area": 1000
+				"value_area": 800
 			}
 		},
 		"color": {
-			"value": "#ffffff"
+			"value": "#FFAE20"
 		},
 		"shape": {
 			"type": "circle",
 			"stroke": {
 				"width": 0,
-				"color": "#000000"
+				"color": "#FFBD4A"
 			},
 			"polygon": {
 				"nb_sides": 5
@@ -43,7 +43,7 @@ const params = {
 		"line_linked": {
 			"enable": true,
 			"distance": 150,
-			"color": "#ffffff",
+			"color": "#FFBD4A",
 			"opacity": 0.4,
 			"width": 1
 		},

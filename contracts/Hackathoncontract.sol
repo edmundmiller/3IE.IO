@@ -38,14 +38,14 @@ contract Hackathoncontract {
         return true;
     }
 
-    function claim_bounty_immediate(bytes32 _hash) public returns (bool success) {
+    function claim_bounty_immediate(bytes32 _hash, address _claimant) public returns (bool success) {
         if(!DEV_MODE){
-            assert(user_rep_map[msg.sender] >= minimum_rep_map[_hash]);
-            assert(has_used[msg.sender][_hash] == false);
-            has_used[msg.sender][_hash] == true;
+            assert(user_rep_map[_claimant] >= minimum_rep_map[_hash]);
+            assert(has_used[_claimant][_hash] == false);
+            has_used[_claimant][_hash] == true;
         }
         bounty_map[_hash] = safe_subtract(bounty_map[_hash], payout_map[_hash]);
-        msg.sender.transfer(payout_map[_hash]);
+        _claimant.transfer(payout_map[_hash]);
         return true;
     }
 

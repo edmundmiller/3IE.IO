@@ -28,14 +28,13 @@ public final class Contract
 		// new contract
 		long shardNum = 0;
 		long realmNum = 0;
-		long gas = 71000;
+		long gas = 0;
 		HederaDuration autoRenewPeriod = new HederaDuration(60, 10);
 
-		final String ABI = "[ { `constant`: true, `inputs`: [ { `name`: ``, `type`: `bytes32` } ], `name`: `bounty_map`, `outputs`: [ { `name`: ``, `type`: `uint256` } ], `payable`: false, `stateMutability`: `view`, `type`: `function` }, { `constant`: false, `inputs`: [ { `name`: `_mode`, `type`: `bool` } ], `name`: `set_dev_mode`, `outputs`: [ { `name`: `success`, `type`: `bool` } ], `payable`: false, `stateMutability`: `nonpayable`, `type`: `function` }, { `constant`: false, `inputs`: [ { `name`: `_hash`, `type`: `bytes32` } ], `name`: `claim_bounty_immediate`, `outputs`: [ { `name`: `success`, `type`: `bool` } ], `payable`: false, `stateMutability`: `nonpayable`, `type`: `function` }, { `constant`: true, `inputs`: [ { `name`: ``, `type`: `address` } ], `name`: `escrowed_bounties`, `outputs`: [ { `name`: ``, `type`: `uint256` } ], `payable`: false, `stateMutability`: `view`, `type`: `function` }, { `constant`: true, `inputs`: [], `name`: `DEV_MODE`, `outputs`: [ { `name`: ``, `type`: `bool` } ], `payable`: false, `stateMutability`: `view`, `type`: `function` }, { `constant`: true, `inputs`: [], `name`: `owner`, `outputs`: [ { `name`: ``, `type`: `address` } ], `payable`: false, `stateMutability`: `view`, `type`: `function` }, { `constant`: true, `inputs`: [ { `name`: ``, `type`: `bytes32` } ], `name`: `minimum_rep_map`, `outputs`: [ { `name`: ``, `type`: `uint256` } ], `payable`: false, `stateMutability`: `view`, `type`: `function` }, { `constant`: true, `inputs`: [ { `name`: ``, `type`: `address` } ], `name`: `user_rep_map`, `outputs`: [ { `name`: ``, `type`: `uint256` } ], `payable`: false, `stateMutability`: `view`, `type`: `function` }, { `constant`: false, `inputs`: [ { `name`: `_recipient`, `type`: `address` }, { `name`: `_amt`, `type`: `uint256` } ], `name`: `release_escrowed`, `outputs`: [ { `name`: `success`, `type`: `bool` } ], `payable`: false, `stateMutability`: `nonpayable`, `type`: `function` }, { `constant`: false, `inputs`: [ { `name`: `_hash`, `type`: `bytes32` }, { `name`: `_payout`, `type`: `uint256` }, { `name`: `min_rep`, `type`: `uint256` } ], `name`: `create_bounty`, `outputs`: [ { `name`: `success`, `type`: `bool` } ], `payable`: true, `stateMutability`: `payable`, `type`: `function` }, { `constant`: true, `inputs`: [ { `name`: ``, `type`: `bytes32` } ], `name`: `payout_map`, `outputs`: [ { `name`: ``, `type`: `uint256` } ], `payable`: false, `stateMutability`: `view`, `type`: `function` }, { `inputs`: [], `payable`: false, `stateMutability`: `nonpayable`, `type`: `constructor` } ]"
-				.replaceAll("`", "\"");
-		byte[] constructorParameters = ABI.getBytes();
+		byte[] constructorParameters = constParams;
 
-		contract.txQueryDefaults.node.contractCreateTransactionFee = 1000;
+		contract.txQueryDefaults = Main.defaultTXSettings();
+		contract.txQueryDefaults.node.contractCreateTransactionFee = 2000;
 		contract.txQueryDefaults.generateRecord = true;
 
 		logger.info("");
@@ -50,6 +49,8 @@ public final class Contract
 		// was it successful ?
 		if (createResult.getPrecheckResult() == HederaPrecheckResult.OK)
 		{
+			Thread.sleep(1000);
+
 			// yes, get a receipt for the transaction
 			HederaTransactionReceipt receipt = Utilities.getReceipt(contract.hederaTransactionID, contract.txQueryDefaults.node);
 			// was that successful ?
@@ -176,7 +177,6 @@ public final class Contract
 		}
 
 		HederaContract contract = new HederaContract();
-		contract.txQueryDefaults = Main.defaultTXSettings();
 
 		try
 		{

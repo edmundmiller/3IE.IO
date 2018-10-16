@@ -12,6 +12,9 @@ import java.util.Date;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import com.hedera.sdk.account.HederaAccount;
+import com.hedera.sdk.common.HederaAccountID;
+
 // The tutorial can be found just here on the SSaurel's Blog :
 // https://www.ssaurel.com/blog/create-a-simple-http-web-server-in-java
 // Each Client Connection will be managed in a dedicated Thread
@@ -62,6 +65,8 @@ public class Server implements Runnable
 	@Override
 	public void run()
 	{
+		Main.initAccount();
+
 		// we manage our particular client connection
 		BufferedReader in = null;
 		PrintWriter out = null;
@@ -97,7 +102,7 @@ public class Server implements Runnable
 
 			String tBody = "";
 			boolean bodyHit = false;
-			while (tLength + 4 < length && (input = in.readLine()) != null)
+			while (tLength + 6 < length && (input = in.readLine()) != null)
 			{
 				bodyHit = bodyHit || input.contains("{");
 
@@ -105,6 +110,8 @@ public class Server implements Runnable
 				{
 					tLength += input.getBytes().length;
 					tBody = tBody.concat(input + "\n");
+
+					System.out.println("Found " + tLength + " bytes.");
 				}
 			}
 
@@ -118,21 +125,65 @@ public class Server implements Runnable
 
 			String request = obj.get("request").toString();
 
-			sendHeader(out);
+			System.out.println("Request type " + request);
 
 			if (request.equals("balance"))
 			{
-				String address = obj.get("address").toString();
 
-				long balance = Main.getBalance(Main.parseHederaAccountIDFromString(address));
+				String address = obj.get("address").toString();
+				System.out.println("Retrieving balance of address " + address);
+
+				HederaAccountID addressID = Main.parseHederaAccountIDFromString(address);
+				long balance = Main.getBalance(addressID);
+
+				Thread.sleep(Main.DEFAULT_TIMEOUT);
 
 				JSONObject response = new JSONObject();
 				response.put("balance", balance);
 
 				String respString = response.toJSONString();
-
 				System.out.println(respString);
 
+				sendHeader(out);
+				respondToClient(dataOut, respString);
+			}
+			else if (request.equals("send"))
+			{
+				String address = obj.get("address").toString();
+
+				long amt = Long.parseLong(obj.get("quantity").toString());
+
+				System.out.println("Transfering amt " + amt);
+
+				HederaAccount admin = Main.hdAcc;
+
+				System.out.println("Admin account " + admin.accountNum);
+
+				HederaAccountID giveTo = Main.parseHederaAccountIDFromString(address);
+
+				Thread.sleep(1000);
+
+				long initialBalance = Main.getBalance(giveTo);
+
+				System.out.println("Has initial balance: " + initialBalance);
+
+				Thread.sleep(Main.DEFAULT_TIMEOUT);
+
+				Main.send(admin, giveTo, amt);
+
+				Thread.sleep(Main.DEFAULT_TIMEOUT);
+
+				long currentBalance = Main.getBalance(giveTo);
+
+				System.out.println("Now has balance: " + currentBalance);
+
+				JSONObject response = new JSONObject();
+				response.put("balance", currentBalance);
+
+				String respString = response.toJSONString();
+				System.out.println(respString);
+
+				sendHeader(out);
 				respondToClient(dataOut, respString);
 			}
 			else

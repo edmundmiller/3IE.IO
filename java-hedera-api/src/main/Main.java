@@ -10,10 +10,8 @@ import com.hedera.sdk.account.HederaAccountCreateDefaults;
 import com.hedera.sdk.common.HederaAccountID;
 import com.hedera.sdk.common.HederaDuration;
 import com.hedera.sdk.common.HederaKey.KeyType;
-import com.hedera.sdk.common.HederaPrecheckResult;
 import com.hedera.sdk.common.HederaTransactionAndQueryDefaults;
 import com.hedera.sdk.common.HederaTransactionReceipt;
-import com.hedera.sdk.common.HederaTransactionStatus;
 import com.hedera.sdk.common.Utilities;
 import com.hedera.sdk.cryptography.HederaCryptoKeyPair;
 import com.hedera.sdk.node.HederaNode;
@@ -24,12 +22,25 @@ public final class Main
 	public static final String nodeAddress = "testnet38.hedera.com";
 	public static final int nodePort = 80;
 
-	private static final HederaNode DEFAULT_DEST_NODE = new HederaNode(nodeAddress, nodePort, new HederaAccountID(0, 0, 3));
-	private static final HederaDuration DEFAULT_DURATION = new HederaDuration(120, 0);
-	private static final HederaAccountID DEFAULT_ACC_ID = new HederaAccountID(0, 0, 1004);
+	public static final HederaNode DEFAULT_DEST_NODE = new HederaNode(nodeAddress, nodePort, new HederaAccountID(0, 0, 3));
+	public static final HederaDuration DEFAULT_DURATION = new HederaDuration(120, 0);
+	public static final HederaAccountID DEFAULT_ACC_ID = new HederaAccountID(0, 0, 1004);
+
+	public static HederaAccount hdAcc = null;
 
 	public static final HederaCryptoKeyPair keyPair = initKeyPair();
-	public static final int DEFAULT_TIMEOUT = 1000;
+	public static final int DEFAULT_TIMEOUT = 1500;
+
+	private static HederaTransactionAndQueryDefaults txQuery = defaultTXSettings();
+
+	public static HederaAccount getAdminAccount()
+	{
+		HederaAccount admin = new HederaAccount();
+		admin.txQueryDefaults = txQuery;
+		admin.setHederaAccountID(DEFAULT_ACC_ID);
+
+		return admin;
+	}
 
 	public static HederaCryptoKeyPair initKeyPair()
 	{
@@ -122,13 +133,16 @@ public final class Main
 		return null;
 	}
 
-	public static boolean send(HederaAccount source, HederaAccountID dest, final int amount)
+	public static boolean send(HederaAccount source, HederaAccountID dest, final long amount)
 	{
+		System.out.println("Sending to account " + dest.accountNum);
+
 		try
 		{
 			source.send(dest, amount);
 		} catch (Exception e)
 		{
+			e.printStackTrace();
 			System.out.println("Failed to send");
 			return false;
 		}
@@ -136,8 +150,11 @@ public final class Main
 		return true;
 	}
 
-	public static HederaTransactionResult createAccount(HederaAccount estAcc, HederaCryptoKeyPair keyPair, long shardID, long realmID, long startingBalance)
+	public static HederaAccount createAccount(HederaAccount account, HederaCryptoKeyPair keyPair, long shardID, long realmID, long startingBalance)
 	{
+		HederaAccount newAccount = new HederaAccount();
+		newAccount.txQueryDefaults = defaultTXSettings();
+
 		try
 		{
 			HederaAccountCreateDefaults defaults = new HederaAccountCreateDefaults(); // now, setup default for account creation 
@@ -146,9 +163,13 @@ public final class Main
 			defaults.autoRenewPeriodSeconds = 86400;
 			defaults.autoRenewPeriodNanos = 0;
 
-			HederaTransactionResult accCreateRes = estAcc.create(shardID, realmID, keyPair.getPublicKey(), keyPair.getKeyType(), startingBalance, defaults);
+			HederaTransactionResult createResult = account.create(shardID, realmID, keyPair.getPublicKey(), keyPair.getKeyType(), startingBalance, defaults);
 
-			return accCreateRes;
+			HederaTransactionReceipt receipt = Utilities.getReceipt(account.hederaTransactionID, account.txQueryDefaults.node);
+
+			newAccount.accountNum = receipt.accountID.accountNum;
+
+			return newAccount;
 		} catch (Exception e)
 		{
 			System.out.println("Failed to create new account.");
@@ -175,107 +196,106 @@ public final class Main
 		}
 	}
 
+	/**
+	 * Works. Don't mess with it.
+	 * 
+	 * @param accID
+	 * @return
+	 * @throws Exception
+	 */
 	public static long getBalance(HederaAccountID accID) throws Exception
 	{
-		HederaNode destNode = DEFAULT_DEST_NODE;
-		final String memo = "Query Balance";
-
-		HederaTransactionAndQueryDefaults txDefaults = generateQueryDefaults(memo, destNode, accID, keyPair, DEFAULT_DURATION);
-
 		HederaAccount acc = new HederaAccount();
+		acc.txQueryDefaults = txQuery;
+		acc.txQueryDefaults.node = DEFAULT_DEST_NODE;
 		acc.setHederaAccountID(accID);
-		acc.txQueryDefaults = txDefaults;
+
+		Thread.sleep(500);
 
 		return acc.getBalance();
 	}
 
-	public static void main(String[] args) throws Exception
+	public static void initAccount()
 	{
-		Credential propLogin = loadProps("node.properties");
+		try
+		{
+			Credential propLogin = loadProps("node.properties");
 
-		HederaNode dest = propLogin.destNode;
-		HederaAccountID src = propLogin.payerSource;
+			HederaNode dest = propLogin.destNode;
+			HederaAccountID src = propLogin.payerSource;
 
-		HederaAccountID destID = dest.getAccountID();
+			HederaAccountID destID = dest.getAccountID();
 
-		long nodeAccountShard = destID.shardNum;
-		long nodeAccountRealm = destID.realmNum;
-		long nodeAccountNum = destID.accountNum;
-		// your account details
-		long payAccountShard = src.shardNum;
-		long payAccountRealm = src.realmNum;
-		long payAccountNum = src.accountNum;
-		// you public and private keys
-		String pubKey = propLogin.pubKey;
-		String privKey = propLogin.privKey;
+			long nodeAccountShard = destID.shardNum;
+			long nodeAccountRealm = destID.realmNum;
+			long nodeAccountNum = destID.accountNum;
+			// your account details
+			long payAccountShard = src.shardNum;
+			long payAccountRealm = src.realmNum;
+			long payAccountNum = src.accountNum;
+			// you public and private keys
+			String pubKey = propLogin.pubKey;
+			String privKey = propLogin.privKey;
 
-		// setup defaults for transactions and Queries 
-		HederaTransactionAndQueryDefaults txQueryDefaults = generateQueryDefaults("Test memo.", dest, src, new HederaCryptoKeyPair(KeyType.ED25519, pubKey, privKey), DEFAULT_DURATION);
+			// setup defaults for transactions and Queries 
+			HederaTransactionAndQueryDefaults txQueryDefaults = generateQueryDefaults("Test memo.", dest, src, new HederaCryptoKeyPair(KeyType.ED25519, pubKey, privKey), DEFAULT_DURATION);
 
-		txQueryDefaults.payingKeyPair = new HederaCryptoKeyPair(KeyType.ED25519, pubKey, privKey); // setup the paying key pair (got from properties loaded above)
-		txQueryDefaults.transactionValidDuration = new HederaDuration(120, 0); // define the valid duration for the transactions (seconds, nanos)
+			txQueryDefaults.payingKeyPair = new HederaCryptoKeyPair(KeyType.ED25519, pubKey, privKey); // setup the paying key pair (got from properties loaded above)
+			txQueryDefaults.transactionValidDuration = new HederaDuration(120, 0); // define the valid duration for the transactions (seconds, nanos)
 
-		HederaAccount myAccount = new HederaAccount(payAccountShard, payAccountRealm, payAccountNum);
-		myAccount.txQueryDefaults.payingKeyPair = null;
-		myAccount.txQueryDefaults = txQueryDefaults;
-		myAccount.getBalance();
+			txQuery = txQueryDefaults;
 
+			HederaAccount myAccount = new HederaAccount(payAccountShard, payAccountRealm, payAccountNum);
+			myAccount.txQueryDefaults.payingKeyPair = null;
+			myAccount.txQueryDefaults = txQueryDefaults;
+			myAccount.getBalance();
+
+			hdAcc = myAccount;
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void test() throws Exception
+	{
+		initAccount();
 		Thread.sleep(DEFAULT_TIMEOUT);
 
 		// instantiate a new account object
 		HederaAccount myNewAccount = new HederaAccount();
 
 		// set its default Transaction and Query parameters
-		myNewAccount.txQueryDefaults = txQueryDefaults;
+		myNewAccount.txQueryDefaults = txQuery;
 
 		// create a new key for my new account
 		HederaCryptoKeyPair newAccountKey = new HederaCryptoKeyPair(KeyType.ED25519);
 
-		try
-		{
-			// send create account transaction
-			long shardToCreateIn = 0;
-			long realmToCreateIn = 0;
-			long startingBalance = 10000;
-			// let's create the account
-			HederaTransactionResult createResult = createAccount(myNewAccount, newAccountKey, shardToCreateIn, realmToCreateIn, startingBalance);
+		// send create account transaction
+		long shardToCreateIn = 0;
+		long realmToCreateIn = 0;
+		long startingBalance = 10000;
+		// let's create the account
+		myNewAccount = createAccount(myNewAccount, newAccountKey, shardToCreateIn, realmToCreateIn, startingBalance);
+		System.out.println(String.format("===>Your new account number is %d", myNewAccount.accountNum));
 
-			// was it successful ?
-			if (createResult.getPrecheckResult() == HederaPrecheckResult.OK)
-			{
-				// yes, get a receipt for the transaction
-				HederaTransactionReceipt receipt = Utilities.getReceipt(myNewAccount.hederaTransactionID, myNewAccount.txQueryDefaults.node);
+		// get balance
+		myNewAccount.txQueryDefaults.payingAccountID = myNewAccount.getHederaAccountID();
+		myNewAccount.txQueryDefaults.payingKeyPair = newAccountKey;
 
-				// was that successful ?
-				if (receipt.transactionStatus == HederaTransactionStatus.SUCCESS)
-				{
-					// yes, get the new account number from the receipt
-					myNewAccount.accountNum = receipt.accountID.accountNum;
-					// and print it out
-					System.out.println(String.format("===>Your new account number is %d", myNewAccount.accountNum));
+		myNewAccount.getBalance();
 
-					// get balance
-					myNewAccount.txQueryDefaults.payingAccountID = myNewAccount.getHederaAccountID();
-					myNewAccount.txQueryDefaults.payingKeyPair = newAccountKey;
+		HederaAccountID toAccountID = DEFAULT_DEST_NODE.getAccountID();
+		myNewAccount.send(toAccountID, 20);
 
-					myNewAccount.getBalance();
+		Thread.sleep(DEFAULT_TIMEOUT);
 
-					HederaAccountID toAccountID = new HederaAccountID(nodeAccountShard, nodeAccountRealm, nodeAccountNum);
-					myNewAccount.send(toAccountID, 20);
+		HederaAccountID toID = new HederaAccountID(0, 0, 1005);
+		myNewAccount.send(toID, 200);
 
-					Thread.sleep(DEFAULT_TIMEOUT);
+		Thread.sleep(DEFAULT_TIMEOUT);
 
-					myNewAccount.getBalance();
-				}
-			}
-			else
-			{
-				System.out.println("Creating result failed.");
-			}
-		} catch (InterruptedException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		myNewAccount.getBalance();
 	}
 }

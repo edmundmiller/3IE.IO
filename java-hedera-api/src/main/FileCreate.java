@@ -79,10 +79,8 @@ public class FileCreate
 		}
 	}
 
-	public static HederaFile create(HederaFile file, String str) throws Exception
+	public static HederaFile create(HederaFile file, byte[] contents) throws Exception
 	{
-		byte[] contents = str.getBytes();
-
 		final Logger logger = LoggerFactory.getLogger(FileCreate.class);
 		// new file
 		long shardNum = 0;
@@ -146,6 +144,11 @@ public class FileCreate
 			return null;
 		}
 		return file;
+	}
+
+	public static HederaFile create(HederaFile file, String str) throws Exception
+	{
+		return create(file, str.getBytes());
 	}
 
 }

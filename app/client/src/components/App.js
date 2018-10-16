@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import NavBar from './NavBar'
-import Nav from './nav';
 
 // pages that the router draws from
 import Landing from '../pages/Landing';
@@ -25,8 +24,7 @@ class App extends React.Component {
       <div>
       <Router>
         <div>
-          {/* <NavBar /> */}
-          <Nav />
+          <NavBar />
         <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/profile" component={Profile} />

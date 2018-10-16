@@ -6,8 +6,8 @@ const getBalance = (accountID) => {
     request: ''
   }
 
-  formData.request = 'balance'
-  formData.accountID = accountID
+  formData.request = 'balance';
+  formData.accountID = accountID;
 
   request.post({
     url:'http://localhost:8080',

@@ -37,6 +37,11 @@
 
 .project-team-wrapper {
     width: 20%;
+    color: white;
+}
+
+.project-team-header {
+    margin: 10px;
 }
 
 .team-member-profile-image {

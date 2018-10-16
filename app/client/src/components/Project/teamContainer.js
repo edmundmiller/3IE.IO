@@ -9,7 +9,7 @@ import styles from '../../css/ProjectDashboard.css';
 const TeamContainer = ({ }) => {
     return (
         <div className="project-team-wrapper"> 
-                    <div>
+                    <div className="project-team-header">
                         Meet The Team:
                     </div>
 
@@ -17,7 +17,7 @@ const TeamContainer = ({ }) => {
                         <img src={ExamplePortfolioOne} className="team-member-profile-image" />
                         <div>
                             Becky
-                            <Typography className={styles.title} color="textSecondary" gutterBottom>
+                            <Typography className={styles.title} color="inherit" gutterBottom>
                                 HR
                             </Typography>
                         </div>
@@ -29,7 +29,7 @@ const TeamContainer = ({ }) => {
                         <img src={ExamplePortfolioTwo} className="team-member-profile-image" />
                         <div>
                             Name
-                            <Typography className={styles.title} color="textSecondary" gutterBottom>
+                            <Typography className={styles.title} color="inherit" gutterBottom>
                                 Role
                             </Typography>
                         </div>                  

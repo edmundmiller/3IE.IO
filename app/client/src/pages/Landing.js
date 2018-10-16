@@ -10,16 +10,6 @@ class Landing extends React.Component {
 				<div className='welcome'><h1>Welcome to 3IE.IO</h1></div>
         <div className='welcome2'><h1>The Tech Farm For Hedera Hashgraph</h1></div>
 				<Particles params={params} className='Particles' />
-        
-				{/* <div className='info'>
-					Where Hashgraphers (FARM)
-						<ul>
-							<li>Familiarize with the tech</li>
-							<li>Align with the community</li>
-							<li>Rely on the information/data</li>
-							<li>Mature their invention, skillset, knowledge</li>
-						</ul>
-				</div> */}
 			</div>
 		);
 	}

@@ -1,3 +1,6 @@
+body {
+  background-color: #040020;
+}
 div.Landing {
 	margin: 0%;
 	padding: 0%;
@@ -7,7 +10,7 @@ div.Landing {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 20%;
-	background-position-y: 40%;
+	background-position-y: 30%;
 }
 
 .Particles {
@@ -27,7 +30,7 @@ div.welcome {
 	/* font-size: 500%; */
 	font-family: 'Open Sans', sans-serif;
 	position: relative;
-	top: 150px;
+	top: 75px;
 }
 div.welcome2 {
   margin: 0%;

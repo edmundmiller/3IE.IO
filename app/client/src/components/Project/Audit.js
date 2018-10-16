@@ -6,7 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { rewardAuditWithMicroPayment } from '../../hedera';
+import rewardAuditWithMicroPayment from '../../hedera/index';
 import Checkbox from '@material-ui/core/Checkbox';
 import styles from '../../css/ProjectDashboard.css';
 

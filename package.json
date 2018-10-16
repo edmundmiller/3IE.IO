@@ -5,12 +5,20 @@
   "author": "Edmund Miller <Edmund.A.Miller@gmail.com>",
   "license": "MIT",
   "main": "app/main.js",
-  "scripts": {},
+  "scripts": {
+    "format:fix": "pretty-quick --staged",
+    "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
+    "precommit": "run-s format:fix"
+  },
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",
     "hash.js": "^1.1.5",
+    "husky": "^1.1.2",
     "minimalistic-assert": "^1.0.1",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.3",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.8.0"
   }
 }

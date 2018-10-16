@@ -11,13 +11,13 @@ const ProjectHeader = ({ }) => {
         <div className="project-wrapper">
                 <div className="project-card">
                     <img src={Ourlogo} className="project-logo" />
-                    <div className="project-header-title">    
+                    <div className="project-header-title" >    
                         Project Name
                     </div>
                 </div>
 
                 <div className="project-label">
-                    <Typography className="title" color="textSecondary" gutterBottom>
+                    <Typography variant="h5" component="h2" color="inherit">
                        Project Title
                     </Typography>
 

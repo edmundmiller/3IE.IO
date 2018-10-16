@@ -1,7 +1,6 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import params from '../config/Landing.config'; 
-// import logo from '../resources/3ie.io.svg';
+import params from '../config/Landing.config';
 import About from './About';
 import '../css/Landing.css';
 
@@ -10,7 +9,6 @@ class Landing extends React.Component {
 		return(
 			<div className='Landing'>
 				<div className='welcome'><h1>Welcome to 3IE.IO</h1></div>
-				{/* <img className='logo' src={logo} /> */}
         <div className='welcome2'><h1>The Tech Farm For Hedera Hashgraph</h1></div>
 				<Particles params={params} className='Particles' />
 				{/* <About /> */}

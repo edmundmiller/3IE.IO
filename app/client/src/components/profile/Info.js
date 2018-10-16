@@ -1,5 +1,6 @@
 import React from 'react';
 import Avatar from './Avatar';
+import Desc from './infoHelp';
 
 class Info extends React.Component {
 	constructor(props) {
@@ -13,11 +14,10 @@ class Info extends React.Component {
 		return (
 			<div className='profile-info'>
 				<Avatar />
-				<h1>Leemon Baird</h1>
+				<Desc />
 			</div>
 		);
 	}
-
 }
 
 export default Info;

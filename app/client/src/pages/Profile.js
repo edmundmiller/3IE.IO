@@ -17,6 +17,7 @@ class Profile extends Component {
     return (
       <div className='Profile'>
         <Info />
+        <div className='profile-div'></div>
         <Descriptions />
       </div>
     );

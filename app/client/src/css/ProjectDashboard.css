@@ -148,9 +148,13 @@
 
 .share-wrapper {
     margin-left: 6%;
-    margin-top: 2%;
     width: 15%;
     color: white;
+}
+
+.share-header {
+    margin: 10px;
+    margin-left: 0px;
 }
 
 .share-social-media-card {

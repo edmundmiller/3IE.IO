@@ -7,7 +7,6 @@ import NavBar from './NavBar'
 import Landing from '../pages/Landing';
 import Profile from '../pages/Profile';
 
-
 import ExploreProjects from '../pages/ExploreProjects';
 import Project from '../pages/Project';
 // Auth
@@ -18,8 +17,6 @@ import About from '../pages/About'
 import Membership from '../pages/Membership'
 import News from '../pages/News'
 
-import '../css/App.css';
-
 class App extends React.Component {
   render() {
     return (
@@ -29,7 +26,6 @@ class App extends React.Component {
           <NavBar />
         <Switch>
             <Route exact path="/" component={Landing} />
-
             <Route path="/profile" component={Profile} />
             <Route path="/projects" component={Project} />
             <Route path="/projects/:id" component={Project} />

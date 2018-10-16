@@ -7,8 +7,10 @@ class Landing extends React.Component {
 	render() {
 		return(
 			<div className='Landing'>
-				{/* <div className='welcome'>Welcome to 3IE.IO</div> */}
+				<div className='welcome'><h1>Welcome to 3IE.IO</h1></div>
+        <div className='welcome2'><h1>The Tech Farm For Hedera Hashgraph</h1></div>
 				<Particles params={params} className='Particles' />
+        
 				{/* <div className='info'>
 					Where Hashgraphers (FARM)
 						<ul>

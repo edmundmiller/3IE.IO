@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from '../resources/logo.svg';
+import logo from '../resources/3ie.io.svg';
 
 // Firebase Authentification
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
